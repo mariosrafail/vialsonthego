@@ -1,0 +1,441 @@
+﻿.intro-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 10020;
+  background: radial-gradient(circle at 50% 30%, #121212 0%, #050505 65%, #000 100%);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.intro-splash.fade {
+  opacity: 0;
+  transition: opacity .42s ease;
+}
+
+.intro-splash.short {
+  background: rgba(4, 4, 4, 0.24);
+  backdrop-filter: blur(2px) saturate(0.92);
+}
+
+.intro-splash.short::before {
+  content: "";
+  position: absolute;
+  inset: -20% -30%;
+  background: linear-gradient(105deg, rgba(236, 220, 168, 0) 20%, rgba(236, 220, 168, 0.18) 45%, rgba(236, 220, 168, 0) 70%);
+  animation: transitionWave .75s ease-out 1;
+}
+
+.intro-inner {
+  text-align: center;
+  color: #ecdca8;
+  transform: translateY(4px) scale(0.97);
+  animation: introRise .95s ease forwards;
+}
+
+.intro-main,
+.intro-sub,
+.intro-tag {
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.intro-splash.text-fade .intro-main,
+.intro-splash.text-fade .intro-sub,
+.intro-splash.text-fade .intro-tag {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.intro-splash.short .intro-inner {
+  transform: translateY(0) scale(0.98);
+}
+
+.intro-splash.short .intro-logo-row {
+  min-width: 160px;
+  min-height: 140px;
+}
+
+.intro-splash.short .intro-logo-row::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 118px;
+  height: 118px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0 1px rgba(236, 220, 168, 0.16), 0 10px 22px rgba(0, 0, 0, 0.45);
+}
+
+.intro-splash.short .intro-logo-row > div:last-child,
+.intro-splash.short .intro-tag {
+  display: none;
+}
+
+.intro-splash.short .intro-bottle {
+  position: relative;
+  left: auto;
+  top: auto;
+  margin-left: 0;
+  z-index: 1;
+}
+
+.intro-logo-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-width: min(560px, 90vw);
+  min-height: 108px;
+}
+
+.intro-main {
+  margin: 0;
+  font-family: "Nunito Sans Local", "Nunito Sans", sans-serif;
+  letter-spacing: .34em;
+  font-size: clamp(1.9rem, 4.2vw, 3.3rem);
+  font-weight: 300;
+  color: #f8f0cf;
+  text-transform: uppercase;
+}
+
+.intro-sub {
+  margin: 4px 0 0;
+  letter-spacing: .22em;
+  font-size: clamp(.86rem, 2.1vw, 1.4rem);
+  color: #e3cb8d;
+  text-transform: uppercase;
+}
+
+.intro-tag {
+  margin: 14px auto 0;
+  width: min(440px, 82vw);
+  border-top: 1px solid rgba(236, 220, 168, .28);
+  padding-top: 12px;
+  letter-spacing: .2em;
+  font-size: .78rem;
+  color: #bfa86d;
+  text-transform: uppercase;
+}
+
+.intro-splash.no-bottle .intro-logo-row {
+  min-height: 88px;
+  min-width: auto;
+}
+
+.intro-splash.no-bottle .intro-main {
+  font-size: clamp(2.2rem, 5.3vw, 4rem);
+  animation: introWordmarkGrow 1.05s ease-out 1 forwards;
+}
+
+.intro-splash.no-bottle .intro-sub {
+  font-size: clamp(1rem, 2.4vw, 1.55rem);
+  letter-spacing: .24em;
+}
+
+.intro-splash .intro-bottle {
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  margin-left: -15px;
+  transform-origin: 50% 80%;
+}
+
+.intro-splash.long .intro-bottle {
+  animation: introTravelLong 1.45s ease-in-out 1 forwards, introPulse 1.45s ease-in-out 1;
+}
+
+.intro-splash.short .intro-bottle {
+  animation: bottleSpin .84s ease-in-out 1, introPulse .62s ease-in-out 1;
+}
+
+.intro-splash .bottle-liquid {
+  animation: fillBottleOnce 1.05s ease-out 1 forwards;
+}
+
+.age-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #020202;
+  color: #f3e6b8;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.age-gate.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .55s ease;
+}
+
+.age-card {
+  width: min(540px, 92vw);
+  text-align: center;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
+.bottle {
+  position: relative;
+  width: 30px;
+  height: 94px;
+  transform-origin: 50% 80%;
+  animation: bottleSpin 2.6s ease-in-out infinite;
+}
+
+.bottle-cap {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  width: 21px;
+  height: 6px;
+  transform: translateX(-50%);
+  border: 2px solid #d3b25f;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #ebd27e 0%, #d1af55 100%);
+}
+
+.bottle-cap::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 17px;
+  transform: translateX(-50%);
+  top: 6px;
+  height: 4px;
+  border: 1.5px solid rgba(211, 178, 95, 0.65);
+  border-radius: 3px;
+  background: linear-gradient(180deg, #ebd27e 0%, #d1af55 100%);
+}
+
+.bottle-neck {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 8px;
+  height: 12px;
+  transform: translateX(-50%);
+  border-left: 2px solid #d3b25f;
+  border-right: 2px solid #d3b25f;
+}
+
+.bottle-body {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  width: 21px;
+  height: 64px;
+  transform: translateX(-50%);
+  border: 2px solid #d3b25f;
+  border-radius: 5px 5px 14px 14px;
+  overflow: hidden;
+}
+
+.bottle-liquid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 36%;
+  border-radius: 0;
+  background: linear-gradient(180deg, #ebd27e 0%, #d1af55 100%);
+  animation: fillBottle 2.3s ease-in-out infinite;
+}
+
+.logo-text {
+  text-align: left;
+  color: #e9d9a4;
+}
+
+.logo-main {
+  margin: 0;
+  font-family: "Nunito Sans Local", "Nunito Sans", sans-serif;
+  letter-spacing: .34em;
+  font-size: clamp(1.8rem, 4vw, 3.1rem);
+  font-weight: 300;
+  color: #f7f0d1;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: textRise .8s ease forwards .45s;
+}
+
+.logo-sub {
+  margin: 6px 0 0;
+  letter-spacing: .24em;
+  font-size: clamp(.82rem, 2vw, 1.35rem);
+  font-weight: 600;
+  color: #e6d297;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: textRise .8s ease forwards .65s;
+}
+
+.logo-tagline {
+  margin: 18px auto 0;
+  width: min(420px, 80vw);
+  padding-top: 14px;
+  border-top: 1px solid rgba(233, 217, 164, .35);
+  font-size: .86rem;
+  letter-spacing: .22em;
+  color: #bfa86d;
+}
+
+.age-question {
+  margin: 26px 0 12px;
+  font-size: 1.05rem;
+  color: #f4e7b9;
+}
+
+.age-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.age-btn {
+  border: 1px solid rgba(216, 189, 105, .55);
+  border-radius: 999px;
+  padding: 9px 16px;
+  min-width: 88px;
+  background: transparent;
+  color: #f3e6b8;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.age-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(216, 189, 105, .13);
+}
+
+.age-btn.yes {
+  background: linear-gradient(90deg, #d8bd69, #efdc95);
+  color: #17120a;
+  border-color: #d8bd69;
+}
+
+.age-feedback {
+  min-height: 24px;
+  margin-top: 14px;
+  color: #e4c87f;
+  font-size: .92rem;
+}
+
+body.page-shift header,
+body.page-shift main,
+body.page-shift footer {
+  animation: pageDrift .75s ease-out 1;
+}
+
+body.page-leaving {
+  overflow: hidden;
+}
+
+body.page-leaving header,
+body.page-leaving main,
+body.page-leaving footer {
+  animation: pageLeaveDrift .62s cubic-bezier(.22,.08,.14,1) forwards;
+  will-change: opacity, filter;
+}
+
+body.page-entering header,
+body.page-entering main,
+body.page-entering footer {
+  animation: pageEnterDrift .82s cubic-bezier(.18,.08,.12,1) both;
+  will-change: opacity, filter;
+}
+
+.nav-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 10030;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(120deg, rgba(4, 4, 4, 0.08) 0%, rgba(4, 4, 4, 0.22) 100%);
+  animation: navOverlayIn .58s ease-out 1 forwards;
+}
+
+.nav-transition-inner {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: grid;
+  place-items: center;
+}
+
+.nav-transition-spot {
+  position: absolute;
+  inset: 16px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.82);
+  box-shadow: 0 0 0 1px rgba(236, 220, 168, 0.14), 0 12px 26px rgba(0, 0, 0, 0.42);
+  z-index: 1;
+  animation: navSpotIn .58s ease-out 1 forwards;
+}
+
+.nav-transition-bottle {
+  position: relative;
+  z-index: 1;
+  animation: bottleSpin .92s ease-in-out 1, introPulse .92s ease-in-out 1;
+}
+
+.nav-transition-bottle .bottle-liquid {
+  animation: fillBottleOnce .9s ease-out 1 forwards;
+}
+
+.wine-reveal {
+  position: fixed;
+  inset: 0;
+  z-index: 10010;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+  animation: wineVeilFade 1.18s ease forwards;
+}
+
+.wine-cell {
+  position: absolute;
+  left: calc(var(--x) * 1px);
+  top: calc(var(--y) * 1px);
+  width: calc(var(--d) * 1px);
+  height: calc(var(--d) * 1px);
+  margin-left: calc(var(--d) * -0.5px);
+  margin-top: calc(var(--d) * -0.5px);
+  border-radius: 50%;
+  background: #000;
+  opacity: 0.96;
+  transform: scale(1.32);
+  animation: blackCellGone .96s cubic-bezier(.28,.08,.19,1) forwards;
+  animation-delay: calc(var(--delay) * 1ms);
+}
+
+.wine-reveal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.14);
+  animation: veilSoftFade 1.05s ease-out forwards;
+}
+
+body.reveal-site header,
+body.reveal-site main,
+body.reveal-site footer {
+  animation: siteFadeIn 1.02s ease-out 1;
+}

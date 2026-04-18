@@ -1,0 +1,55 @@
+﻿@font-face {
+  font-family: "Nunito Sans Local";
+  src: url("../fonts/nunitosans_n4.0276fe080df0ca4e6a22d9cb55aed3ed5ba6b1da.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito Sans Local";
+  src: url("../fonts/nunitosans_n7.25d963ed46da26098ebeab731e90d8802d989fa5.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Local";
+  src: url("../fonts/playfairdisplay_n4.9980f3e16959dc89137cc1369bfc3ae98af1deb9.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --text: #000506;
+  --muted: #33424a;
+  --bg: #fcfcfc;
+  --bg-soft: #f4f1ea;
+  --dark: #0c0d0d;
+  --outline: #052c46;
+  --wine: #6f2a38;
+  --rose: #cc7874;
+  --sand: #f9d0a3;
+  --card: #ffffff;
+  --maxw: 1200px;
+  --rad-lg: 24px;
+  --rad-md: 16px;
+  --shadow: 0 16px 44px rgba(12, 13, 13, 0.1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Nunito Sans Local", "Nunito Sans", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 7% -12%, rgba(204, 120, 116, 0.18), transparent 32%),
+    radial-gradient(circle at 97% 12%, rgba(249, 208, 163, 0.25), transparent 30%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }

@@ -1,0 +1,110 @@
+﻿.hero {
+  padding: 72px 0 48px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--outline);
+}
+
+.kicker::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--outline);
+}
+
+h1,h2,h3,h4 {
+  margin: 0;
+  font-family: "Playfair Local", "Playfair Display", serif;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.hero h1 { font-size: clamp(2.1rem, 4vw + 1rem, 4.5rem); margin-top: 14px; }
+.hero h1 span {
+  color: transparent;
+  background: linear-gradient(90deg, #0c0d0d, #6f2a38 58%, #ad6058);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero p,
+.lead {
+  margin: 18px 0 24px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.btn.primary { background: var(--dark); color: #fff; }
+.btn.ghost { border: 1px solid rgba(5, 44, 70, 0.25); color: var(--outline); background: rgba(255,255,255,0.72); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(12,13,13,.15); }
+
+.hero-media,
+.panel,
+.card,
+.split,
+.services,
+.product-card,
+.mini-card {
+  border: 1px solid rgba(0,5,6,.08);
+  border-radius: var(--rad-lg);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.hero-media {
+  overflow: hidden;
+  min-height: 490px;
+  position: relative;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.04);
+  animation: heroZoom 14s ease-in-out infinite alternate;
+}
+
+.badge {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  max-width: 280px;
+  border-radius: 14px;
+  background: rgba(12,13,13,.76);
+  color: #fff;
+  padding: 12px;
+  font-size: .8rem;
+  line-height: 1.45;
+}

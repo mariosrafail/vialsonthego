@@ -1,0 +1,50 @@
+﻿[
+    {
+        "name":  "Kourkoulou winery Gift box",
+        "formattedPrice":  "€30.00",
+        "ribbon":  "",
+        "stock":  4,
+        "status":  "in_stock",
+        "urlPart":  "kourkoulou-winery-gift-box"
+    },
+    {
+        "name":  "Silva Daskalaki winery 5 Vials Gift box",
+        "formattedPrice":  "€65.00",
+        "ribbon":  "",
+        "stock":  7,
+        "status":  "in_stock",
+        "urlPart":  "silva-daskalaki-gift-box-1"
+    },
+    {
+        "name":  "Silva Daskalaki winery Gift box",
+        "formattedPrice":  "€40.00",
+        "ribbon":  "",
+        "stock":  7,
+        "status":  "in_stock",
+        "urlPart":  "silva-daskalaki-gift-box"
+    },
+    {
+        "name":  "Fragospito winery Gift box 5 Vials",
+        "formattedPrice":  "€50.00",
+        "ribbon":  "Best Seller",
+        "stock":  6,
+        "status":  "in_stock",
+        "urlPart":  "fragospito-gift-box-1"
+    },
+    {
+        "name":  "Dourakis winery Gift box",
+        "formattedPrice":  "€30.00",
+        "ribbon":  "",
+        "stock":  3,
+        "status":  "in_stock",
+        "urlPart":  "dourakis-gift-box"
+    },
+    {
+        "name":  "Fragospito winery Gift box",
+        "formattedPrice":  "€30.00",
+        "ribbon":  "",
+        "stock":  3,
+        "status":  "in_stock",
+        "urlPart":  "fragospito-gift-box"
+    }
+]
