@@ -9,13 +9,7 @@
 }
 
 .announcement {
-  background: #040404;
-  color: #ceb06a;
-  text-align: center;
-  padding: 10px 14px;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  display: none !important;
 }
 
 .container {
@@ -38,6 +32,18 @@ header {
   gap: 18px;
   align-items: center;
   justify-content: space-between;
+}
+
+.nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Header "Shop Collection" CTA removed: catalog exists in main nav */
+.nav > .cta,
+.nav .nav-actions > .cta {
+  display: none !important;
 }
 
 .brand {
@@ -137,6 +143,13 @@ header {
   flex-wrap: wrap;
 }
 
+.nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .nav-links a {
   text-decoration: none;
   font-size: 0.78rem;
@@ -166,6 +179,69 @@ header {
   transform-origin: left;
 }
 
+.sub-toggle {
+  border: 0;
+  background: transparent;
+  color: #e4d3a0;
+  font-size: 0.58rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: -2px;
+  transition: transform .22s ease, color .22s ease;
+}
+
+.has-sub.open .sub-toggle,
+.has-sub:hover .sub-toggle {
+  transform: rotate(180deg);
+  color: #f0d891;
+}
+
+.sub-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 12px);
+  min-width: 220px;
+  display: grid;
+  gap: 2px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(206, 176, 106, 0.25);
+  background: rgba(9, 9, 9, 0.98);
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+  z-index: 20;
+}
+
+.sub-menu a {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  padding: 8px 10px;
+  border-radius: 8px;
+  display: inline-flex;
+  width: 100%;
+}
+
+.sub-menu a::after {
+  display: none;
+}
+
+.sub-menu a:hover,
+.sub-menu a.active {
+  background: rgba(211, 178, 95, 0.14);
+}
+
+.has-sub:hover .sub-menu,
+.has-sub:focus-within .sub-menu,
+.has-sub.open .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 .cta {
   display: inline-flex;
   align-items: center;
@@ -184,6 +260,40 @@ header {
 }
 
 .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.28); }
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(206, 176, 106, 0.18);
+}
+
+.lang-switch button {
+  border: 0;
+  min-width: 42px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: transparent;
+  color: #e4d3a0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .22s ease, color .22s ease, transform .22s ease;
+}
+
+.lang-switch button:hover {
+  transform: translateY(-1px);
+}
+
+.lang-switch button.is-active {
+  background: linear-gradient(90deg, #d3b25f, #ecd68d);
+  color: #111;
+}
 
 .menu-btn {
   display: none;
@@ -210,3 +320,15 @@ header {
 .menu-btn span { top: 50%; transform: translateY(-50%); }
 .menu-btn span::before { top: -8px; }
 .menu-btn span::after { top: 8px; }
+
+[data-en],
+[data-en-html] {
+  transition: opacity .24s ease, filter .24s ease, transform .24s ease;
+}
+
+body.is-language-switching [data-en],
+body.is-language-switching [data-en-html] {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(4px);
+}

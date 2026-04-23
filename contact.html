@@ -1,65 +1,102 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Vials On The Go | Contact</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/assets/images/branding/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="assets/css/styles.css" rel="stylesheet"/>
 </head>
-<body>
-  <div id="progress" class="progress"></div>
-  <div class="announcement">Vials On The Go material + Vinebox-inspired premium design system</div>
+<body data-title-el="Vials On The Go | Επικοινωνία" data-title-en="Vials On The Go | Contact">
+  <div class="progress" id="progress"></div>
 
   <header>
     <div class="container nav" id="navWrap">
-            <a class="brand" href="index.html" aria-label="Vials On The Go home">
-        <span class="brand-mark" aria-hidden="true">
+      <a aria-label="Vials On The Go home" class="brand" href="index.html">
+        <span aria-hidden="true" class="brand-mark">
           <span class="brand-cap"></span>
           <span class="brand-neck"></span>
           <span class="brand-body"><span class="brand-fill"></span></span>
         </span>
         <span class="brand-text">VIALS<span>ON THE GO</span></span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-          <a href='index.html'>Home</a>
-          <a href='products.html'>Products</a>
-          <a href='catalog.html'>Catalog</a>
-          <a href='services.html'>Services</a>
-          <a href='about.html'>About</a>
-          <a class="active" href='contact.html'>Contact</a>
+      <nav aria-label="Primary" class="nav-links">
+        <a data-el="Αρχική" data-en="Home" href="index.html">Home</a>
+        <div class="nav-item has-sub" data-group="products">
+          <a data-el="Προϊόντα" data-en="Products" href="products.html">Products</a>
+          <button aria-expanded="false" aria-label="Toggle product categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών προϊόντων" data-en-aria-label="Toggle product categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Δείγματα" data-en="Vials" href="vials.html">Vials</a>
+            <a data-el="Gift Boxes" data-en="Gift Boxes" href="gift-boxes.html">Gift Boxes</a>
+            <a data-el="Revine" data-en="Revine" href="equipment.html">Revine</a>
+          </div>
+        </div>
+        <a data-el="Κατάλογος" data-en="Catalog" href="catalog.html">Catalog</a>
+        <div class="nav-item has-sub" data-group="services">
+          <a data-el="Υπηρεσίες" data-en="Services" href="services.html">Services</a>
+          <button aria-expanded="false" aria-label="Toggle service categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών υπηρεσιών" data-en-aria-label="Toggle service categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Ποιοτικός έλεγχος" data-en="Quality Analysis" href="quality-analysis.html">Quality Analysis</a>
+            <a data-el="Αποθήκη" data-en="Warehouse" href="warehouse.html">Warehouse</a>
+            <a data-el="Επαυξημένη πραγματικότητα" data-en="Augmented Reality" href="augmented-reality.html">Augmented Reality</a>
+            <a data-el="Συμβουλευτική" data-en="Consulting" href="consulting.html">Consulting</a>
+            <a data-el="Εμφιάλωση" data-en="Bottling" href="bottling.html">Bottling</a>
+            <a data-el="Logistics" data-en="Logistics" href="logistics.html">Logistics</a>
+          </div>
+        </div>
+        <a data-el="Σχετικά" data-en="About" href="about.html">About</a>
+        <a data-el="Επικοινωνία" data-en="Contact" href="contact.html">Contact</a>
       </nav>
-      <a class="cta" href="catalog.html">Shop Collection</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <a class="cta" data-el="Κατάλογος" data-en="Shop Collection" href="catalog.html">Shop Collection</a>
+      <button aria-expanded="false" aria-label="Toggle menu" class="menu-btn" id="menuBtn"><span></span></button>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div data-reveal>
-          <span class="kicker">Vials On The Go</span>
-          <h1>Contact <span>let us build your next tasting program</span></h1>
-          <p>Reach out directly for product orders, consulting, bottling plans and international shipping support.</p>
+        <div data-reveal="">
+          <span class="kicker" data-el="Vials On The Go" data-en="Vials On The Go">Vials On The Go</span>
+          <h1 data-el-html="Επικοινωνία" data-en-html="Contact">Contact</h1>
+          <p data-el="Επικοινώνησε απευθείας για παραγγελίες προϊόντων, συμβουλευτική, bottling plans και υποστήριξη διεθνών αποστολών." data-en="Reach out directly for product orders, consulting, bottling plans and international shipping support.">Reach out directly for product orders, consulting, bottling plans and international shipping support.</p>
           <div class="actions">
-            <a class="btn primary" href="catalog.html">Explore Catalog</a>
-            <a class="btn ghost" href="services.html">B2B Services</a>
+            <a class="btn primary" data-el="Στείλε Email" data-en="Email Us" href="mailto:info@vialsonthego.com">Email Us</a>
+            <a class="btn ghost" data-el="Δες Κατάλογο" data-en="View Catalog" href="catalog.html">View Catalog</a>
           </div>
         </div>
-        <figure class="hero-media" data-reveal>
-          <img src="assets/images/local/image00049.jpeg" alt="Vials On The Go visual">
-          <figcaption class="badge">Original content from vialsonthego.com, redesigned with a Vinebox-style visual system.</figcaption>
+        <figure class="hero-media" data-reveal="">
+          <img alt="Vials On The Go visual" src="assets/images/local/image00049.jpeg"/>
         </figure>
       </div>
     </section>
 
     <section>
-      <div class="container panel" data-reveal>
-        <h2>Contact</h2>
-        <p class="lead">Get in touch so we can start working together.</p>
-        <div class="grid-2">
-          <article class="mini-card"><div class="mini-body"><h3>Email</h3><p><a href="mailto:info@vialsonthego.com">info@vialsonthego.com</a></p></div></article>
-          <article class="mini-card"><div class="mini-body"><h3>Address</h3><p>Kounavoi, Heraklion Crete</p></div></article>
-        </div>
+      <div class="container contact-grid" data-reveal="">
+        <article class="contact-card">
+          <h3 data-el="Στοιχεία επικοινωνίας" data-en="Contact details">Contact details</h3>
+          <ul class="contact-list">
+            <li><strong data-el="Διεύθυνση:" data-en="Address:">Address:</strong> <span data-el="Κουνάβοι, Ηράκλειο Κρήτης" data-en="Kounavoi, Heraklion Crete">Kounavoi, Heraklion Crete</span></li>
+            <li><strong data-el="Τ.Κ.:" data-en="Zip code:">Zip code:</strong> 70100</li>
+            <li><strong data-el="Τηλέφωνο:" data-en="Phone:">Phone:</strong> <a href="tel:+306953087694">+30 6953087694</a></li>
+            <li><strong data-el="Email:" data-en="Email:">Email:</strong> <a href="mailto:info@vialsonthego.com">info@vialsonthego.com</a></li>
+          </ul>
+        </article>
+        <article class="contact-card">
+          <h3 data-el="Ώρες λειτουργίας" data-en="Opening hours">Opening hours</h3>
+          <p data-el="Δευτέρα έως Παρασκευή, 09:00 έως 17:00. Αν σχεδιάζεις project sampling για οινοποιείο, consulting session ή logistics setup, στείλε email με το scope και το επιθυμητό timeline." data-en="Monday to Friday, 09:00 to 17:00. If you are planning a winery sampling project, consulting session or logistics setup, email us with the scope and preferred timeline.">Monday to Friday, 09:00 to 17:00. If you are planning a winery sampling project, consulting session or logistics setup, email us with the scope and preferred timeline.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container" data-reveal="">
+        <article class="contact-card map-wrap">
+          <h3 data-el="Δείτε μας στον χάρτη" data-en="Find us on the map">Find us on the map</h3>
+          <div class="map-frame">
+            <iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kounavoi%2C%20Heraklion%2C%20Crete&amp;output=embed" title="Vials On The Go map location"></iframe>
+          </div>
+          <p><a data-el="Άνοιγμα στο Google Maps" data-en="Open in Google Maps" href="https://www.google.com/maps?q=Kounavoi%2C%20Heraklion%2C%20Crete" rel="noopener noreferrer" target="_blank">Open in Google Maps</a></p>
+        </article>
       </div>
     </section>
   </main>
@@ -67,19 +104,13 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <h3>Need a custom tasting setup for your winery or brand?</h3>
-        <p>Contact <strong>info@vialsonthego.com</strong> to build your custom vials, gift boxes and logistics workflow.</p>
       </div>
-      <a class="cta" href="contact.html">Contact Team</a>
     </div>
-    <div class="container copyright">© 2026 Vials On The Go • Newsite package prepared for deployment</div>
+    <div class="container copyright" data-el="© 2026 Vials On The Go" data-en="© 2026 Vials On The Go">© 2026 Vials On The Go</div>
   </footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/cart.js"></script>
-</body>
-</html>
 
 
-
-
+</body></html>

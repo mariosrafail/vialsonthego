@@ -1,65 +1,84 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Vials On The Go | Gift Boxes</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/assets/images/branding/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="assets/css/styles.css" rel="stylesheet"/>
 </head>
-<body>
-  <div id="progress" class="progress"></div>
-  <div class="announcement">Vials On The Go material + Vinebox-inspired premium design system</div>
+<body data-title-el="Φιαλίδια Εν κινήσει | Κουτιά δώρων" data-title-en="Vials On The Go | Gift Boxes">
+  <div class="progress" id="progress"></div>
+  <div class="announcement" data-el="Premium λύσεις γευσιγνωσίας κρασιού" data-en="Premium wine tasting solutions">Premium wine tasting solutions</div>
 
   <header>
     <div class="container nav" id="navWrap">
-            <a class="brand" href="index.html" aria-label="Vials On The Go home">
-        <span class="brand-mark" aria-hidden="true">
+      <a aria-label="Vials On The Go home" class="brand" href="index.html">
+        <span aria-hidden="true" class="brand-mark">
           <span class="brand-cap"></span>
           <span class="brand-neck"></span>
           <span class="brand-body"><span class="brand-fill"></span></span>
         </span>
         <span class="brand-text">VIALS<span>ON THE GO</span></span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-          <a href='index.html'>Home</a>
-          <a class="active" href='products.html'>Products</a>
-          <a href='catalog.html'>Catalog</a>
-          <a href='services.html'>Services</a>
-          <a href='about.html'>About</a>
-          <a href='contact.html'>Contact</a>
+      <nav aria-label="Primary" class="nav-links">
+        <a data-el="Home" data-en="Home" href="index.html">Home</a>
+        <div class="nav-item has-sub" data-group="products">
+          <a data-el="Products" data-en="Products" href="products.html">Products</a>
+          <button aria-expanded="false" aria-label="Toggle product categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών προϊόντων" data-en-aria-label="Toggle product categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Vials" data-en="Vials" href="vials.html">Vials</a>
+            <a data-el="Gift Boxes" data-en="Gift Boxes" href="gift-boxes.html">Gift Boxes</a>
+            <a data-el="Revine" data-en="Revine" href="equipment.html">Revine</a>
+          </div>
+        </div>
+        <a data-el="Catalog" data-en="Catalog" href="catalog.html">Catalog</a>
+        <div class="nav-item has-sub" data-group="services">
+          <a data-el="Services" data-en="Services" href="services.html">Services</a>
+          <button aria-expanded="false" aria-label="Toggle service categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών υπηρεσιών" data-en-aria-label="Toggle service categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Quality Analysis" data-en="Quality Analysis" href="quality-analysis.html">Quality Analysis</a>
+            <a data-el="Warehouse" data-en="Warehouse" href="warehouse.html">Warehouse</a>
+            <a data-el="Augmented Reality" data-en="Augmented Reality" href="augmented-reality.html">Augmented Reality</a>
+            <a data-el="Consulting" data-en="Consulting" href="consulting.html">Consulting</a>
+            <a data-el="Bottling" data-en="Bottling" href="bottling.html">Bottling</a>
+            <a data-el="Logistics" data-en="Logistics" href="logistics.html">Logistics</a>
+          </div>
+        </div>
+        <a data-el="About" data-en="About" href="about.html">About</a>
+        <a data-el="Contact" data-en="Contact" href="contact.html">Contact</a>
       </nav>
-      <a class="cta" href="catalog.html">Shop Collection</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <a class="cta" data-el="Shop Collection" data-en="Shop Collection" href="catalog.html">Shop Collection</a>
+      <button aria-expanded="false" aria-label="Toggle menu" class="menu-btn" id="menuBtn"><span></span></button>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div data-reveal>
-          <span class="kicker">Vials On The Go</span>
-          <h1>Gift Boxes <span>Ready-made or custom</span></h1>
-          <p>Use premium wine vial gift boxes for hospitality, events, corporate campaigns and direct consumer gifting.</p>
+        <div data-reveal="">
+          <span class="kicker" data-el="Vials On The Go" data-en="Vials On The Go">Vials On The Go</span>
+          <h1 data-el-html="Gift Boxes&lt;span&gt;Έτοιμα ή κατά παραγγελία&lt;/span&gt;" data-en-html="Gift Boxes &lt;span&gt;Ready-made or custom&lt;/span&gt;">Gift Boxes <span>Ready-made or custom</span></h1>
+          <p data-el="Χρησιμοποιήστε κουτιά δώρου με φιαλίδια κρασιού υψηλής ποιότητας για φιλοξενία, εκδηλώσεις, επώνυμες καμπάνιες και άμεσο δώρο από τους καταναλωτές." data-en="Use premium wine vial gift boxes for hospitality, events, branded campaigns and direct consumer gifting.">Use premium wine vial gift boxes for hospitality, events, branded campaigns and direct consumer gifting.</p>
           <div class="actions">
-            <a class="btn primary" href="catalog.html">Explore Catalog</a>
-            <a class="btn ghost" href="services.html">B2B Services</a>
+            <a class="btn primary" data-el="Εξερευνήστε τον Κατάλογο" data-en="Explore Catalog" href="catalog.html">Explore Catalog</a>
+            <a class="btn ghost" data-el="Ερώτηση προσαρμοσμένου πλαισίου" data-en="Custom Box Inquiry" href="contact.html">Custom Box Inquiry</a>
           </div>
         </div>
-        <figure class="hero-media" data-reveal>
-          <img src="assets/images/local/image00049.jpeg" alt="Vials On The Go visual">
-          <figcaption class="badge">Original content from vialsonthego.com, redesigned with a Vinebox-style visual system.</figcaption>
+        <figure class="hero-media" data-reveal="">
+          <img alt="Gift boxes visual" src="assets/images/local/image00049.jpeg"/>
         </figure>
       </div>
     </section>
 
     <section>
-      <div class="container panel" data-reveal>
-        <h2>Gift Boxes</h2>
-        <p class="lead">Appealing wine gift packs built from your own labels, ideal for loved ones, hospitality gifts and branded company presents.</p>
+      <div class="container panel" data-reveal="">
+        <h2 data-el="Κουτιά δώρων" data-en="Gift boxes">Gift boxes</h2>
+        <p class="lead" data-el="Το αρχικό site παρουσίασε κουτιά δώρου κρασιού ως έτοιμα ή προσαρμοσμένα premium δώρα για αγαπημένα πρόσωπα, ξενοδοχεία και εταιρείες. Αυτή η θέση διατηρείται εδώ." data-en="The original site presented wine gift boxes as ready-made or custom premium gifts for loved ones, hotels and companies. That positioning is retained here.">The original site presented wine gift boxes as ready-made or custom premium gifts for loved ones, hotels and companies. That positioning is retained here.</p>
         <div class="grid-3">
-          <article class="card"><figure><img src="assets/images/products/kourkoulou-winery-gift-box-1.jpg" alt="Kourkoulou gift box"></figure><div class="card-body"><h3>Kourkoulou Gift Box</h3><p>Premium tasting presentation for winery storytelling.</p><div class="card-actions"><div class="price">€30.00</div><button class="add-cart-btn js-add-to-cart" data-id="kourkoulou-winery-gift-box" data-name="Kourkoulou winery Gift box" data-price="€30.00" data-image="assets/images/products/kourkoulou-winery-gift-box-1.jpg" type="button">Add to Cart</button></div></div></article>
-          <article class="card"><figure><img src="assets/images/products/silva-daskalaki-gift-box-1-1.jpg" alt="Silva gift box"></figure><div class="card-body"><h3>Silva Daskalaki 5 Vials</h3><p>Expanded gift box format for richer tasting journeys.</p><div class="card-actions"><div class="price">€65.00</div><button class="add-cart-btn js-add-to-cart" data-id="silva-daskalaki-gift-box-1" data-name="Silva Daskalaki winery 5 Vials Gift box" data-price="€65.00" data-image="assets/images/products/silva-daskalaki-gift-box-1-1.jpg" type="button">Add to Cart</button></div></div></article>
-          <article class="card"><figure><img src="assets/images/products/fragospito-gift-box-1-1.jpg" alt="Fragospito gift box"></figure><div class="card-body"><h3>Fragospito 5 Vials</h3><p>Best seller gift option with standout visual impact.</p><div class="card-actions"><div class="price">€50.00</div><button class="add-cart-btn js-add-to-cart" data-id="fragospito-gift-box-1" data-name="Fragospito winery Gift box 5 Vials" data-price="€50.00" data-image="assets/images/products/fragospito-gift-box-1-1.jpg" type="button">Add to Cart</button></div></div></article>
+          <article class="card"><figure><img alt="Kourkoulou gift box" src="assets/images/products/kourkoulou-winery-gift-box-1.jpg"/></figure><div class="card-body"><h3 data-el="Κουτί δώρου Κούρκουλου" data-en="Kourkoulou Gift Box">Kourkoulou Gift Box</h3><p data-el="Premium γευστική παρουσίαση για αφήγηση οινοποιείου και δώρο φιλοξενίας." data-en="Premium tasting presentation for winery storytelling and hospitality gifting.">Premium tasting presentation for winery storytelling and hospitality gifting.</p><div class="card-actions"><div class="price">€30.00</div><button class="add-cart-btn js-add-to-cart" data-el="Add to Cart" data-en="Add to Cart" data-id="kourkoulou-winery-gift-box" data-image="assets/images/products/kourkoulou-winery-gift-box-1.jpg" data-name="Kourkoulou winery Gift box" data-price="€30.00" type="button">Add to Cart</button></div></div></article>
+          <article class="card"><figure><img alt="Silva gift box" src="assets/images/products/silva-daskalaki-gift-box-1-1.jpg"/></figure><div class="card-body"><h3 data-el="Σίλβα Δασκαλάκη 5 Φιαλίδια" data-en="Silva Daskalaki 5 Vials">Silva Daskalaki 5 Vials</h3><p data-el="Διευρυμένο κουτί δώρου με πέντε φιαλίδια σχεδιασμένο για πλουσιότερες γευστικές διαδρομές και υψηλότερη αντιληπτή αξία." data-en="Expanded five-vial gift box designed for richer tasting journeys and higher perceived value.">Expanded five-vial gift box designed for richer tasting journeys and higher perceived value.</p><div class="card-actions"><div class="price">€65.00</div><button class="add-cart-btn js-add-to-cart" data-el="Add to Cart" data-en="Add to Cart" data-id="silva-daskalaki-gift-box-1" data-image="assets/images/products/silva-daskalaki-gift-box-1-1.jpg" data-name="Silva Daskalaki winery 5 Vials Gift box" data-price="€65.00" type="button">Add to Cart</button></div></div></article>
+          <article class="card"><figure><img alt="Fragospito gift box" src="assets/images/products/fragospito-gift-box-1-1.jpg"/></figure><div class="card-body"><h3 data-el="Φραγκόσπιτο 5 Φιαλίδια" data-en="Fragospito 5 Vials">Fragospito 5 Vials</h3><p data-el="Best-seller επιλογή δώρου με ξεχωριστό οπτικό αντίκτυπο και εύκολη απήχηση στους καταναλωτές." data-en="Best-seller gift option with standout visual impact and easy consumer appeal.">Best-seller gift option with standout visual impact and easy consumer appeal.</p><div class="card-actions"><div class="price">€50.00</div><button class="add-cart-btn js-add-to-cart" data-el="Add to Cart" data-en="Add to Cart" data-id="fragospito-gift-box-1" data-image="assets/images/products/fragospito-gift-box-1-1.jpg" data-name="Fragospito winery Gift box 5 Vials" data-price="€50.00" type="button">Add to Cart</button></div></div></article>
         </div>
       </div>
     </section>
@@ -68,19 +87,15 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <h3>Need a custom tasting setup for your winery or brand?</h3>
-        <p>Contact <strong>info@vialsonthego.com</strong> to build your custom vials, gift boxes and logistics workflow.</p>
       </div>
-      <a class="cta" href="contact.html">Contact Team</a>
     </div>
-    <div class="container copyright">© 2026 Vials On The Go • Newsite package prepared for deployment</div>
+    <div class="container copyright" data-el="© 2026 Vials On The Go" data-en="© 2026 Vials On The Go">© 2026 Vials On The Go</div>
   </footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/cart.js"></script>
-</body>
-</html>
 
 
 
 
+</body></html>

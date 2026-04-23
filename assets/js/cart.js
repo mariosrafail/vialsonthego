@@ -1,5 +1,24 @@
-﻿(function () {
+(function () {
   var KEY = 'votg_cart';
+
+  function lang() {
+    return document.documentElement.lang === 'el' ? 'el' : 'en';
+  }
+
+  function copy(key) {
+    var dict = {
+      cart: { en: 'Cart', el: 'Καλαθι' },
+      added: { en: 'added to cart', el: 'προστέθηκε στο καλάθι' },
+      empty: { en: 'Your cart is empty. Add items from the catalog.', el: 'Το καλάθι είναι άδειο. Πρόσθεσε προϊόντα από τον κατάλογο.' },
+      each: { en: 'each', el: 'το ένα' },
+      remove: { en: 'Remove', el: 'Αφαίρεση' },
+      orderSubject: { en: 'Vials On The Go Order Request', el: 'Αίτημα Παραγγελίας Vials On The Go' },
+      orderGreeting: { en: 'Hello,', el: 'Γεια σας,' },
+      orderIntro: { en: 'I would like to order:', el: 'Θα ήθελα να παραγγείλω:' },
+      total: { en: 'Total', el: 'Σύνολο' }
+    };
+    return dict[key][lang()];
+  }
 
   function getCart() {
     try {
@@ -51,22 +70,38 @@
   }
 
   function ensureCartLinks() {
-    var topCta = document.querySelector('.nav > .cta');
-    if (topCta && !document.querySelector('.js-cart-cta')) {
+    if (!document.querySelector('.js-cart-cta')) {
       var cta = document.createElement('a');
       cta.href = 'cart.html';
-      cta.className = 'cta js-cart-cta';
-      cta.innerHTML = 'Cart <span class="cart-count js-cart-count">0</span>';
-      topCta.insertAdjacentElement('afterend', cta);
+      cta.className = 'cart-link js-cart-cta';
+      cta.innerHTML = copy('cart') + ' <span class="cart-count js-cart-count">0</span>';
+      var navActions = document.querySelector('.nav .nav-actions');
+      var menuBtn = document.getElementById('menuBtn');
+      if (navActions) {
+        navActions.insertAdjacentElement('afterbegin', cta);
+      } else if (menuBtn && menuBtn.parentElement) {
+        menuBtn.insertAdjacentElement('beforebegin', cta);
+      } else {
+        var nav = document.querySelector('.nav');
+        if (nav) nav.appendChild(cta);
+      }
     }
 
     if (!document.querySelector('.cart-fab')) {
       var fab = document.createElement('a');
       fab.href = 'cart.html';
       fab.className = 'cart-fab';
-      fab.innerHTML = 'Cart <span class="cart-count js-cart-count">0</span>';
+      fab.innerHTML = copy('cart') + ' <span class="cart-count js-cart-count">0</span>';
       document.body.appendChild(fab);
     }
+  }
+
+  function relabelCartLinks() {
+    document.querySelectorAll('.js-cart-cta, .cart-fab').forEach(function (el) {
+      var count = el.querySelector('.js-cart-count');
+      var qty = count ? count.textContent : '0';
+      el.innerHTML = copy('cart') + ' <span class="cart-count js-cart-count">' + qty + '</span>';
+    });
   }
 
   function updateCartUI() {
@@ -88,7 +123,7 @@
         var price = parseEuro(btn.dataset.price);
         var image = btn.dataset.image || '';
         upsertItem({ id: id, name: name, price: price, image: image, qty: 1 });
-        showToast(name + ' added to cart');
+        showToast(name + ' ' + copy('added'));
       });
     });
   }
@@ -102,7 +137,7 @@
 
     var cart = getCart();
     if (!cart.length) {
-      list.innerHTML = '<p class="empty-cart">Your cart is empty. Add items from the catalog.</p>';
+      list.innerHTML = '<p class="empty-cart">' + copy('empty') + '</p>';
       if (subtotalEl) subtotalEl.textContent = '€0.00';
       if (totalEl) totalEl.textContent = '€0.00';
       if (checkoutBtn) checkoutBtn.setAttribute('disabled', 'disabled');
@@ -118,12 +153,12 @@
         '  <img src="' + item.image + '" alt="' + item.name + '">',
         '  <div>',
         '    <h3 style="font-size:1.05rem;margin:0 0 6px;">' + item.name + '</h3>',
-        '    <div style="color:#33424a;font-size:.9rem;">' + money(item.price) + ' each</div>',
+        '    <div style="color:#33424a;font-size:.9rem;">' + money(item.price) + ' ' + copy('each') + '</div>',
         '    <div class="qty-controls" style="margin-top:8px;">',
         '      <button class="qty-btn js-dec" type="button">-</button>',
         '      <strong>' + item.qty + '</strong>',
         '      <button class="qty-btn js-inc" type="button">+</button>',
-        '      <button class="text-btn js-remove" type="button">Remove</button>',
+        '      <button class="text-btn js-remove" type="button">' + copy('remove') + '</button>',
         '    </div>',
         '  </div>',
         '  <strong>' + money(line) + '</strong>',
@@ -168,15 +203,12 @@
     });
 
     if (checkoutBtn) {
-      checkoutBtn.onclick = function () {
-        var cart = getCart();
-        var lines = cart.map(function (i) {
-          return '- ' + i.name + ' x' + i.qty + ' (' + money(i.price * i.qty) + ')';
-        }).join('%0D%0A');
-        var total = cart.reduce(function (acc, i) { return acc + (i.price * i.qty); }, 0);
-        var subject = 'Vials On The Go Order Request';
-        var body = 'Hello,%0D%0A%0D%0AI would like to order:%0D%0A' + lines + '%0D%0A%0D%0ATotal: ' + money(total) + '%0D%0A';
-        window.location.href = 'mailto:info@vialsonthego.com?subject=' + subject + '&body=' + body;
+      checkoutBtn.onclick = function (event) {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        return false;
       };
     }
 
@@ -191,4 +223,10 @@
   ensureCartLinks();
   bindAddButtons();
   updateCartUI();
+  relabelCartLinks();
+
+  document.addEventListener('votg:languagechange', function () {
+    relabelCartLinks();
+    renderCartPage();
+  });
 })();

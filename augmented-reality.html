@@ -1,76 +1,49 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Vials On The Go | Augmented Reality</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/assets/images/branding/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="assets/css/styles.css" rel="stylesheet"/>
 </head>
-<body>
-  <div id="progress" class="progress"></div>
-  <div class="announcement">Vials On The Go material + Vinebox-inspired premium design system</div>
-
-  <header>
-    <div class="container nav" id="navWrap">
-            <a class="brand" href="index.html" aria-label="Vials On The Go home">
-        <span class="brand-mark" aria-hidden="true">
-          <span class="brand-cap"></span>
-          <span class="brand-neck"></span>
-          <span class="brand-body"><span class="brand-fill"></span></span>
-        </span>
-        <span class="brand-text">VIALS<span>ON THE GO</span></span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-          <a href='index.html'>Home</a>
-          <a href='products.html'>Products</a>
-          <a href='catalog.html'>Catalog</a>
-          <a class="active" href='services.html'>Services</a>
-          <a href='about.html'>About</a>
-          <a href='contact.html'>Contact</a>
-      </nav>
-      <a class="cta" href="catalog.html">Shop Collection</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div data-reveal>
-          <span class="kicker">Vials On The Go</span>
-          <h1>Augmented Reality <span>3D storytelling in every vial</span></h1>
-          <p>Deliver immersive, educational tasting experiences through dynamic AR content tied to your products.</p>
-          <div class="actions">
-            <a class="btn primary" href="catalog.html">Explore Catalog</a>
-            <a class="btn ghost" href="services.html">B2B Services</a>
+<body data-title-el="Φιαλίδια Εν κινήσει | Επαυξημένη Πραγματικότητα" data-title-en="Vials On The Go | Augmented Reality">
+  <div class="progress" id="progress"></div>
+  <div class="announcement" data-el="Premium λύσεις γευσιγνωσίας κρασιού" data-en="Premium wine tasting solutions">Premium wine tasting solutions</div>
+  <header><div class="container nav" id="navWrap"><a aria-label="Vials On The Go home" class="brand" href="index.html"><span aria-hidden="true" class="brand-mark"><span class="brand-cap"></span><span class="brand-neck"></span><span class="brand-body"><span class="brand-fill"></span></span></span><span class="brand-text">VIALS<span>ON THE GO</span></span></a><nav aria-label="Primary" class="nav-links">
+        <a data-el="Home" data-en="Home" href="index.html">Home</a>
+        <div class="nav-item has-sub" data-group="products">
+          <a data-el="Products" data-en="Products" href="products.html">Products</a>
+          <button aria-expanded="false" aria-label="Toggle product categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών προϊόντων" data-en-aria-label="Toggle product categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Vials" data-en="Vials" href="vials.html">Vials</a>
+            <a data-el="Gift Boxes" data-en="Gift Boxes" href="gift-boxes.html">Gift Boxes</a>
+            <a data-el="Revine" data-en="Revine" href="equipment.html">Revine</a>
           </div>
         </div>
-        <figure class="hero-media" data-reveal>
-          <img src="assets/images/local/image00028.jpeg" alt="Vials On The Go visual">
-          <figcaption class="badge">Original content from vialsonthego.com, redesigned with a Vinebox-style visual system.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section><div class="container panel" data-reveal><h2>Augmented Reality</h2><p class="lead">Using our in-house AR application, buyers can explore your winery in 3D, understand the wine-making process and access tasting information directly on phone or tablet.</p><div class="grid-2"><article class="mini-card"><div class="mini-body"><h3>Storytelling In 3D</h3><p>From vineyard to final product, create immersive narratives for each vial.</p></div></article><article class="mini-card"><div class="mini-body"><h3>Mobile Ready</h3><p>AR content works on phones and tablets with dynamic on-screen display.</p></div></article></div></div></section>
+        <a data-el="Catalog" data-en="Catalog" href="catalog.html">Catalog</a>
+        <div class="nav-item has-sub" data-group="services">
+          <a data-el="Services" data-en="Services" href="services.html">Services</a>
+          <button aria-expanded="false" aria-label="Toggle service categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών υπηρεσιών" data-en-aria-label="Toggle service categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Quality Analysis" data-en="Quality Analysis" href="quality-analysis.html">Quality Analysis</a>
+            <a data-el="Warehouse" data-en="Warehouse" href="warehouse.html">Warehouse</a>
+            <a data-el="Augmented Reality" data-en="Augmented Reality" href="augmented-reality.html">Augmented Reality</a>
+            <a data-el="Consulting" data-en="Consulting" href="consulting.html">Consulting</a>
+            <a data-el="Bottling" data-en="Bottling" href="bottling.html">Bottling</a>
+            <a data-el="Logistics" data-en="Logistics" href="logistics.html">Logistics</a>
+          </div>
+        </div>
+        <a data-el="About" data-en="About" href="about.html">About</a>
+        <a data-el="Contact" data-en="Contact" href="contact.html">Contact</a>
+      </nav><a class="cta" data-el="Shop Collection" data-en="Shop Collection" href="catalog.html">Shop Collection</a><button aria-expanded="false" aria-label="Toggle menu" class="menu-btn" id="menuBtn"><span></span></button></div></header>
+  <main>
+    <section class="hero"><div class="container hero-grid"><div data-reveal=""><span class="kicker" data-el="Vials On The Go" data-en="Vials On The Go">Vials On The Go</span><h1 data-el-html="Augmented Reality&lt;span&gt;Τρισδιάστατη αφήγηση σε κάθε φιαλίδιο&lt;/span&gt;" data-en-html="Augmented Reality &lt;span&gt;3D storytelling in every vial&lt;/span&gt;">Augmented Reality <span>3D storytelling in every vial</span></h1><p data-el="Μια εσωτερική εφαρμογή AR επιτρέπει στους αγοραστές να εξερευνήσουν την ιστορία του κρασιού που κρατούν στα χέρια τους, από τον αμπελώνα μέχρι το οινοποιείο μέχρι το τελικό προϊόν." data-en="An in-house AR application lets buyers explore the story of the wine they hold in their hands, from vineyard to winery to final product.">An in-house AR application lets buyers explore the story of the wine they hold in their hands, from vineyard to winery to final product.</p></div><figure class="hero-media" data-reveal=""><img alt="Augmented reality" src="assets/images/local/image00028.jpeg"/></figure></div></section>
+    <section><div class="container panel" data-reveal=""><h2 data-el="Augmented Reality" data-en="Augmented Reality">Augmented Reality</h2><p class="lead" data-el="Η εφαρμογή λειτουργεί σε τηλέφωνα και tablet, με δυναμική εμφάνιση στην οθόνη του περιεχομένου AR για κάθε φιαλίδιο. Αυτό είναι ιδανικό για παρουσιάσεις καθώς και για μεμονωμένους χρήστες." data-en="The app works on phones and tablets, with dynamic on-screen display of the AR content for each vial. This is ideal for presentations as well as for individual users.">The app works on phones and tablets, with dynamic on-screen display of the AR content for each vial. This is ideal for presentations as well as for individual users.</p><div class="grid-2"><article class="mini-card"><div class="mini-body"><h3 data-el="Αφήγηση σε 3D" data-en="Storytelling in 3D">Storytelling in 3D</h3><p data-el="Από τον αμπελώνα μέχρι το τελευταίο μπουκάλι, κάθε γευστική στιγμή αποκτά αφηγηματικό βάθος." data-en="From vineyard to final bottle, each tasting moment gains narrative depth.">From vineyard to final bottle, each tasting moment gains narrative depth.</p></div></article><article class="mini-card"><div class="mini-body"><h3 data-el="Έτοιμο το κινητό" data-en="Mobile ready">Mobile ready</h3><p data-el="Το περιεχόμενο AR έχει σχεδιαστεί για τηλέφωνα και tablet χωρίς επιπλέον απαιτήσεις υλικού." data-en="AR content is designed for phones and tablets without extra hardware requirements.">AR content is designed for phones and tablets without extra hardware requirements.</p></div></article></div></div></section>
   </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <h3>Need a custom tasting setup for your winery or brand?</h3>
-        <p>Contact <strong>info@vialsonthego.com</strong> to build your custom vials, gift boxes and logistics workflow.</p>
-      </div>
-      <a class="cta" href="contact.html">Contact Team</a>
-    </div>
-    <div class="container copyright">© 2026 Vials On The Go • Newsite package prepared for deployment</div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/cart.js"></script>
-</body>
-</html>
+  <script src="assets/js/main.js"></script><script src="assets/js/cart.js"></script>
 
 
 
 
+</body></html>

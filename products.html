@@ -1,67 +1,164 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Vials On The Go | Products</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/assets/images/branding/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="assets/css/styles.css" rel="stylesheet"/>
 </head>
-<body>
-  <div id="progress" class="progress"></div>
-  <div class="announcement">Vials On The Go material + Vinebox-inspired premium design system</div>
+<body data-title-el="Φιαλίδια Εν κινήσει | Προϊόντα" data-title-en="Vials On The Go | Products">
+  <div class="progress" id="progress"></div>
+  <div class="announcement" data-el="Premium λύσεις γευσιγνωσίας κρασιού" data-en="Premium wine tasting solutions">Premium wine tasting solutions</div>
 
   <header>
     <div class="container nav" id="navWrap">
-            <a class="brand" href="index.html" aria-label="Vials On The Go home">
-        <span class="brand-mark" aria-hidden="true">
+      <a aria-label="Vials On The Go home" class="brand" href="index.html">
+        <span aria-hidden="true" class="brand-mark">
           <span class="brand-cap"></span>
           <span class="brand-neck"></span>
           <span class="brand-body"><span class="brand-fill"></span></span>
         </span>
         <span class="brand-text">VIALS<span>ON THE GO</span></span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-          <a href='index.html'>Home</a>
-          <a class="active" href='products.html'>Products</a>
-          <a href='catalog.html'>Catalog</a>
-          <a href='services.html'>Services</a>
-          <a href='about.html'>About</a>
-          <a href='contact.html'>Contact</a>
+      <nav aria-label="Primary" class="nav-links">
+        <a data-el="Home" data-en="Home" href="index.html">Home</a>
+        <div class="nav-item has-sub" data-group="products">
+          <a data-el="Products" data-en="Products" href="products.html">Products</a>
+          <button aria-expanded="false" aria-label="Toggle product categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών προϊόντων" data-en-aria-label="Toggle product categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Vials" data-en="Vials" href="vials.html">Vials</a>
+            <a data-el="Gift Boxes" data-en="Gift Boxes" href="gift-boxes.html">Gift Boxes</a>
+            <a data-el="Revine" data-en="Revine" href="equipment.html">Revine</a>
+          </div>
+        </div>
+        <a data-el="Catalog" data-en="Catalog" href="catalog.html">Catalog</a>
+        <div class="nav-item has-sub" data-group="services">
+          <a data-el="Services" data-en="Services" href="services.html">Services</a>
+          <button aria-expanded="false" aria-label="Toggle service categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών υπηρεσιών" data-en-aria-label="Toggle service categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Quality Analysis" data-en="Quality Analysis" href="quality-analysis.html">Quality Analysis</a>
+            <a data-el="Warehouse" data-en="Warehouse" href="warehouse.html">Warehouse</a>
+            <a data-el="Augmented Reality" data-en="Augmented Reality" href="augmented-reality.html">Augmented Reality</a>
+            <a data-el="Consulting" data-en="Consulting" href="consulting.html">Consulting</a>
+            <a data-el="Bottling" data-en="Bottling" href="bottling.html">Bottling</a>
+            <a data-el="Logistics" data-en="Logistics" href="logistics.html">Logistics</a>
+          </div>
+        </div>
+        <a data-el="About" data-en="About" href="about.html">About</a>
+        <a data-el="Contact" data-en="Contact" href="contact.html">Contact</a>
       </nav>
-      <a class="cta" href="catalog.html">Shop Collection</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <a class="cta" data-el="Shop Collection" data-en="Shop Collection" href="catalog.html">Shop Collection</a>
+      <button aria-expanded="false" aria-label="Toggle menu" class="menu-btn" id="menuBtn"><span></span></button>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div data-reveal>
-          <span class="kicker">Vials On The Go</span>
-          <h1>Products <span>Built Around Real Tasting Needs</span></h1>
-          <p>Choose from our selection of vials, gift boxes and supporting equipment. Every package can be customized to your business goals and market.</p>
+        <div data-reveal="">
+          <span class="kicker" data-el="Vials On The Go" data-en="Vials On The Go">Vials On The Go</span>
+          <h1 data-el-html="Products&lt;span&gt;Χτισμένο γύρω από πραγματικές ανάγκες γευσιγνωσίας&lt;/span&gt;" data-en-html="Products &lt;span&gt;Built Around Real Tasting Needs&lt;/span&gt;">Products <span>Built Around Real Tasting Needs</span></h1>
+          <p data-el="Επιλέξτε από τη συλλογή μας σε φιαλίδια, κουτιά δώρου και βοηθητικό εξοπλισμό. Κάθε συσκευασία μπορεί να προσαρμοστεί στους επιχειρηματικούς σας στόχους, το περιεχόμενο και τη μεταξοτυπία σας." data-en="Choose from our selection of vials, gift boxes and supporting equipment. Every package can be customized to your business goals, contents and silk print.">Choose from our selection of vials, gift boxes and supporting equipment. Every package can be customized to your business goals, contents and silk print.</p>
           <div class="actions">
-            <a class="btn primary" href="catalog.html">Explore Catalog</a>
-            <a class="btn ghost" href="services.html">B2B Services</a>
+            <a class="btn primary" data-el="Εξερευνήστε τον Κατάλογο" data-en="Explore Catalog" href="catalog.html">Explore Catalog</a>
+            <a class="btn ghost" data-el="Υπηρεσίες B2B" data-en="B2B Services" href="services.html">B2B Services</a>
           </div>
         </div>
-        <figure class="hero-media" data-reveal>
-          <img src="assets/images/local/image00007.jpeg" alt="Vials On The Go visual">
-          <figcaption class="badge">Original content from vialsonthego.com, redesigned with a Vinebox-style visual system.</figcaption>
+        <figure class="hero-media" data-reveal="">
+          <img alt="Vials On The Go visual" src="assets/images/local/image00007.jpeg"/>
         </figure>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="section-head" data-reveal>
-          <h2>Products Overview</h2>
-          <p>Choose from our selection of vials, gift boxes and supporting equipment. Every solution is customizable to your business activity and goals.</p>
+        <div class="section-head" data-reveal="">
+          <h2 data-el="Επισκόπηση προϊόντων" data-en="Products Overview">Products Overview</h2>
+          <p data-el="Η παλιά σελίδα προϊόντος επικεντρώθηκε σε τρεις πυλώνες: καινοτόμα φιαλίδια, ελκυστικά γευστικά κουτιά και εξοπλισμός που βοηθά στην ποιότητα, την κλίμακα και τη συνέπεια." data-en="The old product page focused on three pillars: innovative vials, appealing tasting boxes and equipment that helps quality, scale and consistency.">The old product page focused on three pillars: innovative vials, appealing tasting boxes and equipment that helps quality, scale and consistency.</p>
         </div>
         <div class="grid-3">
-          <article class="card" data-reveal><figure><img src="assets/images/local/image00028.jpeg" alt="Vials"></figure><div class="card-body"><span class="pill">Vials</span><h3>50 ml & 100 ml Vials</h3><p>By-the-glass bottling creates more tasting opportunities and supports responsible drinking.</p><ul class="product-stats"><li><span>Sizes</span><strong>50ml / 100ml</strong></li><li><span>Material</span><strong>Glass / Recycled plastic</strong></li></ul><div class="card-actions"><a class="add-cart-btn" href="vials.html">View Specs</a></div></div></article>
-          <article class="card" data-reveal><figure><img src="assets/images/local/image00007.jpeg" alt="Gift boxes"></figure><div class="card-body"><span class="pill">Gift Boxes</span><h3>Ready-Made Tasting Boxes</h3><p>Premium 3 or 5 tube wine gift sets with broad consumer appeal.</p><ul class="product-stats"><li><span>Catalog items</span><strong>6 products</strong></li><li><span>Price range</span><strong>€30 - €65</strong></li></ul><div class="card-actions"><a class="add-cart-btn" href="catalog.html">Shop Now</a></div></div></article>
-          <article class="card" data-reveal><figure><img src="assets/images/local/image00049.jpeg" alt="Travel serving"></figure><div class="card-body"><span class="pill">Travel Ready</span><h3>Ideal For Airlines</h3><p>Unbreakable options and measured servings that help cabin teams reduce overconsumption.</p><ul class="product-stats"><li><span>Use case</span><strong>Travel / Hospitality</strong></li><li><span>Shipping</span><strong>Global</strong></li></ul><div class="card-actions"><a class="add-cart-btn" href="services.html">Get Proposal</a></div></div></article>
+          <article class="card" data-reveal="">
+            <figure><img alt="Vials" src="assets/images/local/image00028.jpeg"/></figure>
+            <div class="card-body">
+              <span class="pill" data-el="Vials" data-en="Vials">Vials</span>
+              <h3 data-el="Φιαλίδια 50 ml &amp; 100 ml" data-en="50 ml &amp; 100 ml Vials">50 ml &amp; 100 ml Vials</h3>
+              <p data-el="Η εμφιάλωση από γυαλί δημιουργεί περισσότερες ευκαιρίες γευσιγνωσίας, ενθαρρύνει την υπεύθυνη κατανάλωση ποτών και υποστηρίζει τη βιώσιμη διανομή." data-en="By-the-glass bottling creates more tasting opportunities, encourages responsible drinking and supports sustainable distribution.">By-the-glass bottling creates more tasting opportunities, encourages responsible drinking and supports sustainable distribution.</p>
+              <ul class="product-stats">
+                <li><span data-el="Μεγέθη" data-en="Sizes">Sizes</span><strong>50 ml / 100 ml</strong></li>
+                <li><span data-el="Υλικό" data-en="Material">Material</span><strong data-el="Γυαλί / Ανακυκλωμένο πλαστικό" data-en="Glass / Recycled plastic">Glass / Recycled plastic</strong></li>
+              </ul>
+              <div class="card-actions"><a class="add-cart-btn" data-el="Προβολή προδιαγραφών" data-en="View Specs" href="vials.html">View Specs</a></div>
+            </div>
+          </article>
+          <article class="card" data-reveal="">
+            <figure><img alt="Gift boxes" src="assets/images/local/image00007.jpeg"/></figure>
+            <div class="card-body">
+              <span class="pill" data-el="Gift Boxes" data-en="Gift Boxes">Gift Boxes</span>
+              <h3 data-el="Έτοιμα κουτιά γευσιγνωσίας" data-en="Ready-Made Tasting Boxes">Ready-Made Tasting Boxes</h3>
+              <p data-el="Ελκυστικά κουτιά γευσιγνωσίας 3 και 5 φιαλιδίων με ευρεία απήχηση στους καταναλωτές, έτοιμα για φιλοξενία, δώρα και επώνυμες ενεργοποιήσεις." data-en="Appealing 3-vial and 5-vial tasting boxes with broad consumer appeal, ready for hospitality, gifting and branded activations.">Appealing 3-vial and 5-vial tasting boxes with broad consumer appeal, ready for hospitality, gifting and branded activations.</p>
+              <ul class="product-stats">
+                <li><span data-el="Είδη καταλόγου" data-en="Catalog items">Catalog items</span><strong>6</strong></li>
+                <li><span data-el="Εύρος τιμών" data-en="Price range">Price range</span><strong>?30 - ,65</strong></li>
+              </ul>
+              <div class="card-actions"><a class="add-cart-btn" data-el="Δείτε Κουτιά" data-en="See Boxes" href="gift-boxes.html">See Boxes</a></div>
+            </div>
+          </article>
+          <article class="card" data-reveal="">
+            <figure><img alt="Revine equipment" src="assets/images/local/image00049.jpeg"/></figure>
+            <div class="card-body">
+              <span class="pill" data-el="Εξοπλισμός" data-en="Equipment">Equipment</span>
+              <h3 data-el="Εξοπλισμός Revine" data-en="Revine Equipment">Revine Equipment</h3>
+              <p data-el="Εξοπλισμός και υποστήριξη διεργασιών που βοηθούν τους παραγωγούς να διατηρήσουν την ποιότητα, να βελτιώσουν τη λειτουργική ροή και να κλιμακώσουν τα προγράμματα γευσιγνωσίας υψηλής ποιότητας." data-en="Equipment and process support that help producers preserve quality, improve operational flow and scale premium tasting programs.">Equipment and process support that help producers preserve quality, improve operational flow and scale premium tasting programs.</p>
+              <ul class="product-stats">
+                <li><span data-el="Θήκη χρήσης" data-en="Use case">Use case</span><strong data-el="Παραγωγή / Δειγματοληψία" data-en="Production / Sampling">Production / Sampling</strong></li>
+                <li><span data-el="Αξία" data-en="Value">Value</span><strong data-el="Ποιότητα &amp; συνέπεια" data-en="Quality &amp; consistency">Quality &amp; consistency</strong></li>
+              </ul>
+              <div class="card-actions"><a class="add-cart-btn" data-el="Μάθετε περισσότερα" data-en="Learn More" href="equipment.html">Learn More</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split" data-reveal="">
+        <img alt="Product lineup" src="assets/images/local/image00023.jpeg"/>
+        <div class="content">
+          <h2 data-el="Κατασκευασμένο για να ταιριάζει με την επιχείρησή σας" data-en="Built to match your business">Built to match your business</h2>
+          <p class="lead" data-el="Όλα όσα παράγουμε είναι προσαρμοσμένα σύμφωνα με τις κύριες δραστηριότητες και τους στόχους σας. Η παλιά τοποθεσία έδινε έμφαση στην ευελιξία, και αυτό παραμένει στο επίκεντρο εδώ." data-en="Everything we produce is custom made around your main activities and goals. The old site emphasized flexibility, and that remains central here.">Everything we produce is custom made around your main activities and goals. The old site emphasized flexibility, and that remains central here.</p>
+          <ul>
+            <li data-el="Προσαρμοσμένο περιεχόμενο, επωνυμία και μεταξοτυπία σύμφωνα με τη στρατηγική αγοράς σας." data-en="Custom contents, branding and silk print according to your market strategy.">Custom contents, branding and silk print according to your market strategy.</li>
+            <li data-el="Μορφές για οινοποιεία, ηλεκτρονικά καταστήματα, φιλοξενία και αεροπορικές υπηρεσίες." data-en="Formats for wineries, e-shops, hospitality and airline service.">Formats for wineries, e-shops, hospitality and airline service.</li>
+            <li data-el="Ένα σύστημα προϊόντων που υποστηρίζεται από εμφιάλωση, logistics και συμβουλευτική." data-en="A product system supported by bottling, logistics and consulting.">A product system supported by bottling, logistics and consulting.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container panel" data-reveal="">
+        <div class="section-head">
+          <h2 data-el="Πλεονεκτήματα προϊόντος" data-en="Product advantages">Product advantages</h2>
+          <p data-el="Συνοπτικά πλεονεκτήματα προϊόντος αντλήθηκαν από την αρχική τοποθεσία και ευθυγραμμισμένα με τη σημερινή διάταξη." data-en="Concise product benefits pulled from the original site and aligned to the present-day layout.">Concise product benefits pulled from the original site and aligned to the present-day layout.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <strong>50 / 100</strong>
+            <span data-el="Δύο μεγέθη φιαλιδίου που καλύπτουν ακρίβεια γευσιγνωσίας, φιλοξενίας και δώρου." data-en="Two vial sizes that cover precision tasting, hospitality and gifting.">Two vial sizes that cover precision tasting, hospitality and gifting.</span>
+          </div>
+          <div class="stat-card">
+            <strong>3 / 5</strong>
+            <span data-el="Μορφές κουτιών δώρου κατασκευασμένες για δειγματοληψία ταξιδιών και premium παρουσίαση." data-en="Gift box formats built for sampling journeys and premium presentation.">Gift box formats built for sampling journeys and premium presentation.</span>
+          </div>
+          <div class="stat-card">
+            <strong data-el="Εθιμο" data-en="Custom">Custom</strong>
+            <span data-el="Περιεχόμενα με δυνατότητα διαμόρφωσης, επεξεργασία επωνυμίας και κατεύθυνση συσκευασίας." data-en="Configurable contents, brand treatment and packaging direction.">Configurable contents, brand treatment and packaging direction.</span>
+          </div>
+          <div class="stat-card">
+            <strong data-el="B2B" data-en="B2B">B2B</strong>
+            <span data-el="Υποστηρίζεται από ποιοτικές αναλύσεις, εμφιάλωση, logistics και συμβουλές από ειδικούς." data-en="Backed by quality analysis, bottling, logistics and expert consulting.">Backed by quality analysis, bottling, logistics and expert consulting.</span>
+          </div>
         </div>
       </div>
     </section>
@@ -70,19 +167,15 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <h3>Need a custom tasting setup for your winery or brand?</h3>
-        <p>Contact <strong>info@vialsonthego.com</strong> to build your custom vials, gift boxes and logistics workflow.</p>
       </div>
-      <a class="cta" href="contact.html">Contact Team</a>
     </div>
-    <div class="container copyright">© 2026 Vials On The Go • Newsite package prepared for deployment</div>
+    <div class="container copyright" data-el="© 2026 Vials On The Go" data-en="© 2026 Vials On The Go">© 2026 Vials On The Go</div>
   </footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/cart.js"></script>
-</body>
-</html>
 
 
 
 
+</body></html>

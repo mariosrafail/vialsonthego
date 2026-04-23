@@ -1,98 +1,155 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Vials On The Go | About Us</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/assets/images/branding/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="assets/css/styles.css" rel="stylesheet"/>
 </head>
-<body>
-  <div id="progress" class="progress"></div>
-  <div class="announcement">Vials On The Go material + Vinebox-inspired premium design system</div>
+<body class="about-page" data-title-el="Vials On The Go | Σχετικά" data-title-en="Vials On The Go | About Us">
+  <div class="progress" id="progress"></div>
 
   <header>
     <div class="container nav" id="navWrap">
-            <a class="brand" href="index.html" aria-label="Vials On The Go home">
-        <span class="brand-mark" aria-hidden="true">
+      <a aria-label="Vials On The Go home" class="brand" href="index.html">
+        <span aria-hidden="true" class="brand-mark">
           <span class="brand-cap"></span>
           <span class="brand-neck"></span>
           <span class="brand-body"><span class="brand-fill"></span></span>
         </span>
         <span class="brand-text">VIALS<span>ON THE GO</span></span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-          <a href='index.html'>Home</a>
-          <a href='products.html'>Products</a>
-          <a href='catalog.html'>Catalog</a>
-          <a href='services.html'>Services</a>
-          <a class="active" href='about.html'>About</a>
-          <a href='contact.html'>Contact</a>
+      <nav aria-label="Primary" class="nav-links">
+        <a data-el="Αρχική" data-en="Home" href="index.html">Home</a>
+        <div class="nav-item has-sub" data-group="products">
+          <a data-el="Προϊόντα" data-en="Products" href="products.html">Products</a>
+          <button aria-expanded="false" aria-label="Toggle product categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών προϊόντων" data-en-aria-label="Toggle product categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Δείγματα" data-en="Vials" href="vials.html">Vials</a>
+            <a data-el="Gift Boxes" data-en="Gift Boxes" href="gift-boxes.html">Gift Boxes</a>
+            <a data-el="Revine" data-en="Revine" href="equipment.html">Revine</a>
+          </div>
+        </div>
+        <a data-el="Κατάλογος" data-en="Catalog" href="catalog.html">Catalog</a>
+        <div class="nav-item has-sub" data-group="services">
+          <a data-el="Υπηρεσίες" data-en="Services" href="services.html">Services</a>
+          <button aria-expanded="false" aria-label="Toggle service categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών υπηρεσιών" data-en-aria-label="Toggle service categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Ποιοτικός έλεγχος" data-en="Quality Analysis" href="quality-analysis.html">Quality Analysis</a>
+            <a data-el="Αποθήκη" data-en="Warehouse" href="warehouse.html">Warehouse</a>
+            <a data-el="Επαυξημένη πραγματικότητα" data-en="Augmented Reality" href="augmented-reality.html">Augmented Reality</a>
+            <a data-el="Συμβουλευτική" data-en="Consulting" href="consulting.html">Consulting</a>
+            <a data-el="Εμφιάλωση" data-en="Bottling" href="bottling.html">Bottling</a>
+            <a data-el="Logistics" data-en="Logistics" href="logistics.html">Logistics</a>
+          </div>
+        </div>
+        <a data-el="Σχετικά" data-en="About" href="about.html">About</a>
+        <a data-el="Επικοινωνία" data-en="Contact" href="contact.html">Contact</a>
       </nav>
-      <a class="cta" href="catalog.html">Shop Collection</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <a class="cta" data-el="Κατάλογος" data-en="Shop Collection" href="catalog.html">Shop Collection</a>
+      <button aria-expanded="false" aria-label="Toggle menu" class="menu-btn" id="menuBtn"><span></span></button>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div data-reveal>
-          <span class="kicker">Vials On The Go</span>
-          <h1>About Us <span>where wine meets technology</span></h1>
-          <p>A team with chemistry, marketing and AR backgrounds building a new tasting experience for wine lovers and professionals.</p>
-          <div class="actions">
-            <a class="btn primary" href="catalog.html">Explore Catalog</a>
-            <a class="btn ghost" href="services.html">B2B Services</a>
-          </div>
+        <div data-reveal="">
+          <span class="kicker" data-el="Vials On The Go" data-en="Vials On The Go">Vials On The Go</span>
+          <h1 data-el-html="Σχετικά" data-en-html="About Us">About Us</h1>
+
+          
         </div>
-        <figure class="hero-media" data-reveal>
-          <img src="assets/images/about/about-hero.jpg" alt="Vials On The Go about banner">
-          <figcaption class="badge">Images sourced from the original About Us page and integrated in the new design.</figcaption>
-        </figure>
+
+        
       </div>
     </section>
 
     <section>
-      <div class="container panel" data-reveal>
-        <h2>About Us</h2>
-        <p class="lead">It all began when three friends with diverse backgrounds came together: wine chemistry, marketing and sales, and new technologies including augmented reality.</p>
+      <div class="container panel" data-reveal="">
+        <div class="section-head">
+          <h2 data-el="Γνωρίστε την ομάδα" data-en="Meet the team">Meet the team</h2>
+          <p data-el="Η ομάδα μας είναι πάντα διαθέσιμη να σας συμβουλέψει σε οποιαδήποτε απορία μπορεί να έχετε." data-en="Our team of experts on Vials on the go is always at your disposal and able to assist you in any inquiries you may have.">Our team of experts on Vials on the go is always at your disposal and able to assist you in any inquiries you may have.</p>
+        </div>
         <div class="grid-2">
           <article class="card">
-            <figure><img src="assets/images/about/about-team-1.jpg" alt="Vials On The Go team member"></figure>
+            <figure><img alt="Lefteris Parthenakis" src="assets/images/about/about-team-1.jpg"/></figure>
             <div class="card-body">
-              <h3>Lefteris Parthenakis</h3>
-              <p>BA in Business Marketing and Advertising, with international sales and promotion experience across Greece, Cyprus, Canada, USA, Europe and Scandinavia.</p>
+              <h3 data-el="Λευτέρης Παρθενάκης" data-en="Lefteris Parthenakis">Lefteris Parthenakis</h3>
+              <p data-el="Πτυχιούχος Business Marketing and Advertising με είκοσι χρόνια εμπειρίας σε promotion, πωλήσεις και regional marketing σε Ελλάδα, Κύπρο, Καναδά, ΗΠΑ, Ευρώπη και Σκανδιναβία." data-en="BA in Business Marketing and Advertising with twenty years of experience in promotion, sales and regional marketing across Greece, Cyprus, Canada, USA, Europe and Scandinavia.">BA in Business Marketing and Advertising with twenty years of experience in promotion, sales and regional marketing across Greece, Cyprus, Canada, USA, Europe and Scandinavia.</p>
             </div>
           </article>
           <article class="card">
-            <figure><img src="assets/images/about/about-team-2.jpg" alt="Vials On The Go team member"></figure>
+            <figure><img alt="Antony Melakis" src="assets/images/about/about-team-2.jpg"/></figure>
             <div class="card-body">
-              <h3>Technical & Wine Expertise</h3>
-              <p>Chemist leadership with 21 years in wineries, focused on quality products, process enhancement and team training.</p>
+              <h3 data-el="Αντώνης Μελάκης" data-en="Antony Melakis">Antony Melakis</h3>
+              <p data-el="Χημικός-Οινολόγος με 21 χρόνια εμπειρίας σε οινοποιεία στην Ελλάδα, με έμφαση στην ποιότητα, στη βελτίωση διαδικασιών και στη διαχείριση ομάδων." data-en="Chemist and oenologist with 21 years of winery experience in Greece, respected for quality-led process improvement, team leadership and practical production knowledge.">Chemist and oenologist with 21 years of winery experience in Greece, respected for quality-led process improvement, team leadership and practical production knowledge.</p>
             </div>
           </article>
         </div>
-        <p class="lead">Vials On The Go was created to combine fine wine and technology, opening a new world of tasting discovery through portable premium formats and AR storytelling.</p>
       </div>
     </section>
+
+    <section>
+      <div class="container split" data-reveal="">
+        <img alt="Wine technology story" src="assets/images/local/image00007.jpeg"/>
+        <div class="content">
+          <h2 data-el="Η πλήρης ιστορία" data-en="The full story">The full story</h2>
+          <p class="lead" data-el="Όλα ξεκίνησαν όταν τρεις φίλοι με διαφορετικό υπόβαθρο αποφάσισαν να δημιουργήσουν μια νέα εμπειρία κρασιού, συνδυάζοντας ποιοτικό κρασί, marketing και τεχνολογία." data-en="It all began when three friends with different backgrounds decided to create a new wine experience by combining fine wine, marketing insight and new technology.">It all began when three friends with different backgrounds decided to create a new wine experience by combining fine wine, marketing insight and new technology.</p>
+          <ul>
+            <li data-el="Ο ένας είχε υπόβαθρο στη χημεία και την παραγωγή κρασιού." data-en="One background came from wine chemistry and production.">One background came from wine chemistry and production.</li>
+            <li data-el="Ο άλλος είχε εμπειρία στο marketing, στο promotion και στις πωλήσεις." data-en="One came from marketing, promotion and sales.">One came from marketing, promotion and sales.</li>
+            <li data-el="Ο τρίτος ερχόταν από τις νέες τεχνολογίες και την επαυξημένη πραγματικότητα." data-en="One came from new technologies and augmented reality.">One came from new technologies and augmented reality.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container panel" data-reveal="">
+        <div class="section-head">
+          <h2 data-el="Ας συνεργαστούμε" data-en="Let's Work Together">Let's Work Together</h2>
+          <p data-el="Επικοινωνήστε μαζί μας για να ξεκινήσουμε να δουλεύουμε μαζί." data-en="Get in touch so we can start working together.">Get in touch so we can start working together.</p>
+        </div>
+        <form class="about-work-form" novalidate="">
+          <div class="about-form-grid">
+            <label>
+              <span data-el="Όνομα" data-en="Name">Name</span>
+              <input data-el-placeholder="Το όνομά σας" data-en-placeholder="Your name" name="name" placeholder="Your name" type="text"/>
+            </label>
+            <label>
+              <span data-el="Email" data-en="Email">Email</span>
+              <input data-el-placeholder="Το email σας" data-en-placeholder="Your email" name="email" placeholder="Your email" type="email"/>
+            </label>
+            <label>
+              <span data-el="Τηλέφωνο" data-en="Phone">Phone</span>
+              <input data-el-placeholder="Το τηλέφωνό σας" data-en-placeholder="Your phone" name="phone" placeholder="Your phone" type="tel"/>
+            </label>
+            <label class="about-form-message">
+              <span data-el="Μήνυμα" data-en="Message">Message</span>
+              <textarea data-el-placeholder="Γράψτε το μήνυμά σας" data-en-placeholder="Write your message" name="message" placeholder="Write your message" rows="6"></textarea>
+            </label>
+          </div>
+          <div class="actions">
+            <button class="btn primary" data-el="Αποστολή" data-en="Send" type="button">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <h3>Need a custom tasting setup for your winery or brand?</h3>
-        <p>Contact <strong>info@vialsonthego.com</strong> to build your custom vials, gift boxes and logistics workflow.</p>
       </div>
-      <a class="cta" href="contact.html">Contact Team</a>
     </div>
-    <div class="container copyright">© 2026 Vials On The Go • Newsite package prepared for deployment</div>
+    <div class="container copyright" data-el="© 2026 Vials On The Go" data-en="© 2026 Vials On The Go">© 2026 Vials On The Go</div>
   </footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/cart.js"></script>
-</body>
-</html>
 
 
-
-
+</body></html>

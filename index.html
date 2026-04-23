@@ -1,94 +1,127 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Vials On The Go | Home</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/assets/images/branding/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="assets/css/styles.css" rel="stylesheet"/>
 </head>
-<body>
-  <div id="progress" class="progress"></div>
-  <div class="announcement">Vials On The Go material + Vinebox-inspired premium design system</div>
+<body data-title-el="Vials On The Go | Αρχική" data-title-en="Vials On The Go | Home">
+  <div class="progress" id="progress"></div>
 
   <header>
     <div class="container nav" id="navWrap">
-            <a class="brand" href="index.html" aria-label="Vials On The Go home">
-        <span class="brand-mark" aria-hidden="true">
+      <a aria-label="Vials On The Go home" class="brand" href="index.html">
+        <span aria-hidden="true" class="brand-mark">
           <span class="brand-cap"></span>
           <span class="brand-neck"></span>
           <span class="brand-body"><span class="brand-fill"></span></span>
         </span>
         <span class="brand-text">VIALS<span>ON THE GO</span></span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-          <a class="active" href='index.html'>Home</a>
-          <a href='products.html'>Products</a>
-          <a href='catalog.html'>Catalog</a>
-          <a href='services.html'>Services</a>
-          <a href='about.html'>About</a>
-          <a href='contact.html'>Contact</a>
+      <nav aria-label="Primary" class="nav-links">
+        <a data-el="Αρχική" data-en="Home" href="index.html">Home</a>
+        <div class="nav-item has-sub" data-group="products">
+          <a data-el="Προϊόντα" data-en="Products" href="products.html">Products</a>
+          <button aria-expanded="false" aria-label="Toggle product categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών προϊόντων" data-en-aria-label="Toggle product categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Δείγματα" data-en="Vials" href="vials.html">Vials</a>
+            <a data-el="Gift Boxes" data-en="Gift Boxes" href="gift-boxes.html">Gift Boxes</a>
+            <a data-el="Revine" data-en="Revine" href="equipment.html">Revine</a>
+          </div>
+        </div>
+        <a data-el="Κατάλογος" data-en="Catalog" href="catalog.html">Catalog</a>
+        <div class="nav-item has-sub" data-group="services">
+          <a data-el="Υπηρεσίες" data-en="Services" href="services.html">Services</a>
+          <button aria-expanded="false" aria-label="Toggle service categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών υπηρεσιών" data-en-aria-label="Toggle service categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Ποιοτικός έλεγχος" data-en="Quality Analysis" href="quality-analysis.html">Quality Analysis</a>
+            <a data-el="Αποθήκη" data-en="Warehouse" href="warehouse.html">Warehouse</a>
+            <a data-el="Επαυξημένη πραγματικότητα" data-en="Augmented Reality" href="augmented-reality.html">Augmented Reality</a>
+            <a data-el="Συμβουλευτική" data-en="Consulting" href="consulting.html">Consulting</a>
+            <a data-el="Εμφιάλωση" data-en="Bottling" href="bottling.html">Bottling</a>
+            <a data-el="Logistics" data-en="Logistics" href="logistics.html">Logistics</a>
+          </div>
+        </div>
+        <a data-el="Σχετικά" data-en="About" href="about.html">About</a>
+        <a data-el="Επικοινωνία" data-en="Contact" href="contact.html">Contact</a>
       </nav>
-      <a class="cta" href="catalog.html">Shop Collection</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <a class="cta" data-el="Κατάλογος" data-en="Shop Collection" href="catalog.html">Shop Collection</a>
+      <button aria-expanded="false" aria-label="Toggle menu" class="menu-btn" id="menuBtn"><span></span></button>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div data-reveal>
-          <span class="kicker">Vials On The Go</span>
-          <h1>A Whole New Collection <span>For Modern Wine Tasting</span></h1>
-          <p>As a maker of wines or spirits, you can let professionals and consumers taste and review more labels with less waste, better logistics and premium presentation.</p>
+        <div data-reveal="">
+          <span class="kicker" data-el="Vials On The Go" data-en="Vials On The Go">Vials On The Go</span>
+          <h1 data-el-html="Μια Νέα Συλλογή &lt;span&gt;για σύγχρονη γευσιγνωσία κρασιού&lt;/span&gt;" data-en-html="A Whole New Collection &lt;span&gt;Wine Tasting&lt;/span&gt;">A Whole New Collection <span>Wine Tasting</span></h1>
+          <p data-el="Αν παράγεις κρασί ή αποστάγματα, θέλεις επαγγελματίες πελάτες και καταναλωτές να μπορούν να δοκιμάσουν και να αξιολογήσουν το προϊόν σου. Με τα Vials On The Go μπορείς να προσεγγίσεις 7 έως 14 πελάτες με ένα μόνο κανονικό μπουκάλι. Επίσης, οι αποστολές παγκοσμίως γίνονται πιο εύκολες. Η χρήση των single serve vials μειώνει κόστος και σπατάλη, ενώ δημιουργεί νέες εμπορικές ευκαιρίες." data-en="As a maker of wines or spirits you want professional clients and consumers to be able to taste and review your product. With Vialsonthego you can reach 7 to 14 customers with one single regular bottle. Also, sending out your beverages worldwide becomes more convenient. Using our single serve Vials will not only result in a decrease in costs and waste but also brings new product opportunities.">As a maker of wines or spirits you want professional clients and consumers to be able to taste and review your product. With Vialsonthego you can reach 7 to 14 customers with one single regular bottle. Also, sending out your beverages worldwide becomes more convenient. Using our single serve Vials will not only result in a decrease in costs and waste but also brings new product opportunities.</p>
           <div class="actions">
-            <a class="btn primary" href="catalog.html">Explore Catalog</a>
-            <a class="btn ghost" href="services.html">B2B Services</a>
+            <a class="btn primary" data-el="Δες τον Κατάλογο" data-en="Explore Catalog" href="catalog.html">Explore Catalog</a>
+            <a class="btn ghost" data-el="B2B Υπηρεσίες" data-en="B2B Services" href="services.html">B2B Services</a>
           </div>
         </div>
-        <figure class="hero-media" data-reveal>
-          <img src="assets/images/local/image00028.jpeg" alt="Vials On The Go visual">
-          <figcaption class="badge">Original content from vialsonthego.com, redesigned with a Vinebox-style visual system.</figcaption>
+        <figure class="hero-media" data-reveal="">
+          <img alt="Vials On The Go visual" src="assets/images/local/image00028.jpeg"/>
+          <figcaption class="badge" data-el="Premium μονοδόσεις για οινοποιεία, λιανική, ταξίδια και gifting." data-en="Single-serve premium formats for wineries, retail, travel and gifting.">Single-serve premium formats for wineries, retail, travel and gifting.</figcaption>
         </figure>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="section-head" data-reveal>
-          <h2>Why you should work with us</h2>
-          <p>Easy to serve solution for wine lovers, premium shelf-life performance and recyclable material options in 50 ml and 100 ml formats.</p>
+        <div class="section-head" data-reveal="">
+          <h2 data-el="Γιατί πρέπει να συνεργαστείτε μαζί μας" data-en="Why you should work with us">Why you should work with us</h2>
         </div>
         <div class="grid-3">
-          <article class="mini-card" data-reveal><div class="mini-body"><h3>Premium Shelf Life</h3><p>Commercially indicated shelf life with preserved quality and organoleptic profile.</p></div></article>
-          <article class="mini-card" data-reveal><div class="mini-body"><h3>Glass Or Plastic</h3><p>All vials are available in recyclable glass or recycled plastic to fit each use case.</p></div></article>
-          <article class="mini-card" data-reveal><div class="mini-body"><h3>Certified Facility</h3><p>State-of-the-art bottling facilities with IFS and organic certifications.</p></div></article>
+          <article class="mini-card" data-reveal="">
+            <div class="mini-body">
+              <h3 data-el="Εκλεπτυσμένο προϊόν με μεγάλη διάρκεια ζωής" data-en="Premium product with commercial indicated shelf life">Premium product with commercial indicated shelf life</h3>
+            </div>
+          </article>
+          <article class="mini-card" data-reveal="">
+            <div class="mini-body">
+              <h3 data-el="Όλα τα Vials μας είναι κατασκευασμένα από ανακυκλωμένο πλαστικό ή γυαλί" data-en="All our Vials are available in recyclable glass or plastic">All our Vials are available in recyclable glass or plastic</h3>
+            </div>
+          </article>
+          <article class="mini-card" data-reveal="">
+            <div class="mini-body">
+              <h3 data-el="Υπερσύγχρονες εγκαταστάσεις με IFS και οργανικές πιστοποιήσεις" data-en="State of the art bottling facilities with IFS &amp; organic certifications">State of the art bottling facilities with IFS &amp; organic certifications</h3>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container split" data-reveal>
-        <img src="assets/images/local/image00023.jpeg" alt="Wine vial lineup">
+      <div class="container split" data-reveal="">
+        <img alt="Wine vial lineup" src="assets/images/local/image00023.jpeg"/>
         <div class="content">
-          <h2>Single Serve Samples For Wineries</h2>
-          <p class="lead">With Vialsonthego you can reach 7 to 14 customers with one regular bottle and make global sampling much easier and more cost-efficient.</p>
+          <h2 data-el="Οινογευσία" data-en="Wine Tasting">Wine Tasting</h2>
+          <p class="lead" data-el="Τα χωρητικότητας 50 ml Vials μας είναι ιδανικά για τον οινοποιό που θέλει να δοκιμαστεί το κρασί του από πελάτες και συνεργάτες αλλά και από τον απλό καταναλωτή. Με τα Vials μας μπορείτε να φτάσετε 7 έως 14 καταναλωτές όπου και να βρίσκονται με ένα μόνο μπουκάλι κρασί. Χρησιμοποιώντας τα Vials μας όχι μόνο θα μειώσετε τα κόστη σας και τα απορρίμματα αλλά θα προωθήσετε και τα προϊόντα σας." data-en="As a maker of wines or spirits you want professional clients and consumers to be able to taste and review your product. With Vialsonthego you can reach 7 to 14 customers with one single regular bottle. Also, sending out your beverages worldwide becomes more convenient. Using our single serve Vials will not only result in a decrease in costs and waste but also brings new product opportunities.">As a maker of wines or spirits you want professional clients and consumers to be able to taste and review your product. With Vialsonthego you can reach 7 to 14 customers with one single regular bottle. Also, sending out your beverages worldwide becomes more convenient. Using our single serve Vials will not only result in a decrease in costs and waste but also brings new product opportunities.</p>
           <ul>
-            <li>Custom tasting tools for liquor stores, retail and e-shop sales.</li>
-            <li>Practical format for travel and airline beverage service.</li>
-            <li>Ready-made and custom wine gift boxes for hotels and brands.</li>
+            <li data-el="Ατομικά δείγματα γευσιγνωσίας για τα οινοποιεία." data-en="Single serve samples for wineries">Single serve samples for wineries</li>
+            <li data-el="Εύκολη και με χαμηλό κόστος αποστολή δειγμάτων σε ολόκληρο τον κόσμο." data-en="Easy to sample all over the world">Easy to sample all over the world.</li>
           </ul>
         </div>
       </div>
     </section>
 
+    
+
     <section>
       <div class="container">
-        <div class="section-head" data-reveal><h2>Trusted Partners</h2><p>Original partner logos from the Vials On The Go site.</p></div>
+        <div class="section-head" data-reveal="">
+          <h2 data-el="Οι συνεργάτες μας" data-en="Our trusted partners">Our trusted partners</h2>
+        </div>
         <div class="logos">
-          <div class="logo" data-reveal><img src="assets/images/local/dourakis.webp" alt="Dourakis"></div>
-          <div class="logo" data-reveal><img src="assets/images/local/kourkoulou logo.jpg" alt="Kourkoulou"></div>
-          <div class="logo" data-reveal><img src="assets/images/local/fragospito logo.jpg" alt="Fragospito"></div>
-          <div class="logo" data-reveal><img src="assets/images/local/silva logo.webp" alt="Silva"></div>
+          <div class="logo" data-reveal=""><img alt="Dourakis" src="assets/images/local/dourakis.webp"/></div>
+          <div class="logo" data-reveal=""><img alt="Kourkoulou" src="assets/images/local/kourkoulou logo.jpg"/></div>
+          <div class="logo" data-reveal=""><img alt="Fragospito" src="assets/images/local/fragospito logo.jpg"/></div>
+          <div class="logo" data-reveal=""><img alt="Silva" src="assets/images/local/silva logo.webp"/></div>
         </div>
       </div>
     </section>
@@ -97,19 +130,15 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <h3>Need a custom tasting setup for your winery or brand?</h3>
-        <p>Contact <strong>info@vialsonthego.com</strong> to build your custom vials, gift boxes and logistics workflow.</p>
       </div>
-      <a class="cta" href="contact.html">Contact Team</a>
     </div>
-    <div class="container copyright">© 2026 Vials On The Go • Newsite package prepared for deployment</div>
+    <div class="container copyright" data-el="© 2026 Vials On The Go" data-en="© 2026 Vials On The Go">© 2026 Vials On The Go</div>
   </footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/cart.js"></script>
-</body>
-</html>
 
 
 
 
+</body></html>

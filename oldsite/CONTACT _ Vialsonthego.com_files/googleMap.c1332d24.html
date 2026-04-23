@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<!-- saved from url=(0385)https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/media/googleMap.c1332d24.html?defaultLocation=0&showZoom=true&showStreetView=true&showMapType=true&language=en&id=dataItem-lovik0xf&googleMapsScriptPath=%2Fservices%2Feditor-elements-library%2Fdist%2Fthunderbolt%2Fmedia%2Fgoogle-map.min.5d8ab435.js&origin=https%3A%2F%2Fwww.vialsonthego.com&hasFocus=true -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+      <style type="text/css">
+        * {
+          border: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        html {
+          height: 100%;
+        }
+
+        body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        #map_canvas {
+          height: 100%;
+          width: 100%;
+        }
+
+        .gm-style-iw p {
+          width: 101%;
+        }
+
+        #content {
+          overflow-x: hidden;
+        }
+
+        .no-focus *:focus,
+        .no-focus *:focus-visible {
+          outline: none !important;
+        }
+
+        /*
+         * FYI:
+         * Weird selector that hides google map custom focus indicator
+         * Writing such weird selector since this div doesn't have any id or class
+         */
+         .no-focus div[style*="pointer-events: none"] {
+          border: 0 !important;
+        }
+      </style>
+      <script>
+        (function () {
+          var params = new URLSearchParams(window.location.search);
+          var decodedGoogleMapsScriptPath = decodeURIComponent(
+            params.get('googleMapsScriptPath'),
+          );
+          var googleMapsScriptPath;
+          try { // if it is an URL, get only path part
+            googleMapsScriptPath = new URL(decodedGoogleMapsScriptPath).pathname;
+          } catch (e) {
+            googleMapsScriptPath = decodedGoogleMapsScriptPath;
+          }
+          var scriptUrl = `${googleMapsScriptPath}?origin=${decodeURIComponent(params.get('origin'))}`;
+
+          var script = document.createElement('script');
+          script.src = scriptUrl;
+          document.head.appendChild(script);
+
+          document.addEventListener('DOMContentLoaded', function () {
+            if (params.get('hasFocus') === 'false') {
+              document.body.classList.add('no-focus');
+            }
+          });
+        })();
+      </script><script src="./google-map.min.5d8ab435.js.download"></script>
+    <script type="text/javascript" charset="UTF-8" src="./common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./util.js.download"></script><script type="text/javascript" charset="UTF-8" src="./map.js.download"></script><script type="text/javascript" charset="UTF-8" src="./marker.js.download"></script><script type="text/javascript" charset="UTF-8" src="./infowindow.js.download"></script></head>
+  
+  <body inject_vt_svd="true">
+    <div id="map_canvas"><div style="height: 100%; width: 100%;"><div style="overflow: hidden;"></div></div></div>
+    <!--
+      A11y: adds aria-expanded to the native Google Maps tilt button (.gm-tilt).
+      The tilt button toggles visibility of sibling rotate buttons but Google Maps
+      does not set aria-expanded, so screen readers cannot announce the state.
+      Uses MutationObserver because map controls render asynchronously.
+
+      Fragile: depends on Google Maps internal DOM (class "gm-tilt" and sibling
+      rotate buttons with display toggling). Fails silently if Google changes
+      the structure.
+    -->
+    <script>
+      (function () {
+        var mapContainer = document.getElementById('map_canvas');
+        if (!mapContainer) {
+          return;
+        }
+
+        var currentTiltButton = null;
+        var parentObserver = null;
+        var containerObserver = null;
+
+        function getRotateSiblings(tiltButton) {
+          var parent = tiltButton.parentElement;
+          if (!parent) {
+            return [];
+          }
+          var siblings = parent.querySelectorAll('button');
+          var result = [];
+          for (var i = 0; i < siblings.length; i++) {
+            if (siblings[i] !== tiltButton) {
+              result.push(siblings[i]);
+            }
+          }
+          return result;
+        }
+
+        function isExpanded(tiltButton) {
+          var siblings = getRotateSiblings(tiltButton);
+          for (var i = 0; i < siblings.length; i++) {
+            if (window.getComputedStyle(siblings[i]).display !== 'none') {
+              return true;
+            }
+          }
+          return false;
+        }
+
+        function updateAriaExpanded(tiltButton) {
+          tiltButton.setAttribute(
+            'aria-expanded',
+            String(isExpanded(tiltButton)),
+          );
+        }
+
+        function startContainerObserver() {
+          containerObserver = new MutationObserver(function () {
+            enhanceTiltButton();
+          });
+          containerObserver.observe(mapContainer, {
+            childList: true,
+            subtree: true,
+          });
+        }
+
+        function enhanceTiltButton() {
+          var tiltButton = mapContainer.querySelector('.gm-tilt');
+          if (!tiltButton || tiltButton === currentTiltButton) {
+            return;
+          }
+
+          if (parentObserver) {
+            parentObserver.disconnect();
+            parentObserver = null;
+          }
+
+          currentTiltButton = tiltButton;
+          updateAriaExpanded(tiltButton);
+
+          if (containerObserver) {
+            containerObserver.disconnect();
+            containerObserver = null;
+          }
+
+          var parent = tiltButton.parentElement;
+          if (parent) {
+            parentObserver = new MutationObserver(function () {
+              if (!currentTiltButton || !currentTiltButton.isConnected) {
+                if (parentObserver) {
+                  parentObserver.disconnect();
+                  parentObserver = null;
+                }
+                currentTiltButton = null;
+                startContainerObserver();
+                return;
+              }
+              updateAriaExpanded(currentTiltButton);
+            });
+            parentObserver.observe(parent, {
+              attributes: true,
+              attributeFilter: ['style'],
+              subtree: true,
+              childList: true,
+            });
+          }
+        }
+
+        startContainerObserver();
+      })();
+    </script>
+  
+
+<script type="text/javascript" src="./js"></script><div id="vimeo_tool" class="vimeo_tool"><template shadowrootmode="open"><style>
+#vimeo_tool {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: #3d3d3d;
+  font-family: Source Han Sans;
+  font-variation-settings: "opsz" auto;
+font-feature-settings: "kern" on;
+line-height:normal;
+}
+
+#vimeo_tool.isOption{
+  background: linear-gradient(#fff, rgba(100, 170, 228, 0.2));
+}
+
+.priceImg {
+  width: 372px;
+  z-index: 99;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.priceImg .get {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 28px;
+  border-radius: 4px;
+  background-color: rgba(13, 189, 189, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  text-align: center;
+  font-family: Roboto;
+  cursor: pointer;
+  width: 67px;
+  bottom: 48px;
+  line-height: 28px;
+}
+
+.priceImg img {
+  width: 100%;
+}
+
+.priceImg .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  color: rgba(154, 154, 154, 1);
+}
+
+
+
+.pop {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 9999999;
+}
+
+.notice {
+  width: 360px;
+  text-align: center;
+  margin-bottom: 20px
+}
+
+.notice_in {
+  display: none;
+  height: 30px;
+  line-height: 30px;
+  background-color: #fbf6f6;
+  animation: fadenum 1s;
+  width: 470px;
+  margin: 0 auto 0 -40px;
+}
+
+.notice_in_svg {
+  float: left;
+  margin-left: 10px;
+  margin-top: 1px;
+}
+
+@keyframes fadenum {
+  0% {
+      transform: translateX(70px);
+  }
+}
+
+.dialog {
+  height: 560px;
+  width: 400px;
+  background-color: #fbf6f6;
+  padding-top: 0px;
+}
+
+.dialog_close {
+  margin-top: -102px;
+  margin-left: 380px;
+  position: absolute;
+}
+
+.dialog_in {
+  max-width: 320px;
+  flex: 1;
+  border: 1px solid #FD935A;
+  border-radius: 5px;
+  position: relative;
+  margin-right: 15px;
+  padding-top: 20px;
+}
+
+.dialog_in:last-child {
+  margin-right: 0;
+}
+
+.dialog_in span.discount {
+  color: #B36BF4;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #f9dfcf;
+  padding: 6px 0 6px 6px;
+  border-radius: 0 4px 0 6px;
+  font-size: 13px;
+}
+
+:root {
+  --titleHeight: 55px
+}
+
+.pro {
+  text-align: center;
+  height: var(--titleHeight);
+  line-height: var(--titleHeight);
+  color: #000;
+  font-weight: 450;
+  font-size: 28px;
+}
+
+.dialog_line {
+  border-bottom: 1px solid #ffc750;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.fee {
+  display: block;
+  text-align: center;
+  height: var(--titleHeight);
+  line-height: var(--titleHeight)
+}
+
+.fee>span:nth-child(1) {
+  font-size: 34px;
+  color: #444444;
+  font-weight: 500;
+  font-family: Source Han Sans;
+}
+
+#newsvd_dialog_in.Yearly .fee>span:nth-child(1){
+  color: #FD935A;
+}
+
+
+#newsvd_dialog_in.Yearly span.discount {
+  border-radius: 0 4px 0 100%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+}
+
+.fee>span:nth-child(2) {
+  color: #B6B5B5;
+    font-size: 14px;
+}
+
+.feature_list {
+  margin-left: 40px;
+  text-align: left;
+}
+
+.feature_list img.rightIcon{
+  margin-right: 7px;
+}
+
+.feature_list ul {
+  margin-left: -40px;
+  font-size: 14px
+}
+
+.feature_list ul li svg {
+  margin-left: -10px;
+  margin-right: 0px;
+  height: 13px;
+}
+
+.feature_list ul li {
+  line-height: 30px;
+  text-indent: -15px;
+  list-style: none;
+}
+
+.feature_list ul li::marker {
+  color: #00c0be;
+}
+
+.dialog_get {
+  cursor: pointer;
+  border: none;
+  display: block;
+  border-radius: 5px;
+  background-color: #00c0be;
+  height: 30px;
+  width: 100px;
+  line-height: 30px;
+  margin: 10px auto 5px;
+  font-weight: 600;
+  color: white
+}
+
+.newsvd_pro_sub {
+  border-radius: 999999px;
+  color: #FD935A;
+  box-sizing: border-box;
+  border: 1px solid #FD935A;
+  width: 80%;
+  text-align: center;
+  padding: 8px;
+  margin: 10px auto;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-block;
+  transition: all .4s;
+  font-size: 14px;
+}
+
+#newsvd_dialog_in.Yearly .newsvd_pro_sub {
+  background: linear-gradient(180deg, #F1C946 0%, #FD935A 100%);
+  color: #fff;
+}
+
+#newsvd_dialog_in.Yearly .newsvd_pro_sub:hover{
+  opacity: .9;
+}
+
+span.newsvd_pro_sub:hover {
+  background: #FD935A;
+  color: #fff;
+}
+
+.dialog_close {
+  height: 20px;
+  width: 20px;
+  border-radius: 4em;
+}
+
+.dialog_close:hover {
+  background-color: #00c0be;
+}
+
+.external_ffmpeg {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#payment_popup {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.payment_content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 103;
+  height: 320px;
+  width: 410px;
+  background: #fff;
+  padding: 20px;
+}
+
+.payment_select {
+  padding: 20px 0 0 110px;
+}
+
+.payment_label {
+  line-height: 30px;
+}
+
+.original_price {
+  text-decoration: line-through;
+  color: red !important;
+}
+
+.chat_summary_block,
+.newsvd_chat_summary_block {
+  display: none;
+  position: absolute;
+  width: 250px;
+  margin-left: 65px;
+  height: 85px;
+  text-align: center !important;
+  background: white;
+}
+
+.summary_new {
+  height: 18px;
+  width: 18px;
+  margin-right: -3px;
+  margin-left: -6px;
+  float: left;
+  border-radius: 3px
+}
+
+.newsvd_summary_new {
+  height: 18px;
+  width: 18px;
+  margin-top: -4px;
+  margin-right: -3px;
+  margin-left: -5px;
+  float: left;
+  border-radius: 3px
+}
+
+.timerInput {
+  font-size: 16px;
+  display: inline-block;
+  margin: 10px 7% 0 0
+}
+
+.timeTip {
+  display: none;
+  position: absolute;
+  left: 23px;
+  border-radius: 5px;
+  width: 220px;
+  margin-top: -27px;
+  margin-left: -250px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center !important;
+  background: #0072e6;
+  color: white;
+}
+
+.timerInput p {
+  width: 77px;
+  height: 31px;
+  line-height: 31px;
+  border: 1px solid #9a999c;
+  border-radius: 4px;
+  color: #9a999c;
+  font-size: 14px;
+  text-align: center;
+  font-family: Roboto;
+  margin-top: 5px;
+}
+
+.spanTimer {
+  background: none;
+  outline: none;
+  padding: 0 !important;
+  width: 16px;
+  border: 0;
+  color: #9a999c !important;
+}
+
+.spanTimer:focus {
+  border: none;
+}
+
+.time_middle {
+  margin-left: -15px;
+  color: #9a999c;
+}
+
+.jump_to_chatGPT {
+  background: #0072e6 !important;
+  color: white;
+  outline: none;
+  font-size: 13px !important;
+  height: 27px !important;
+  width: 150px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px !important;
+  cursor: pointer;
+}
+
+.summary_position {
+  display: inline-block;
+  position: relative;
+  margin-left: -10px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.summary_position img {
+  height: 20px;
+  width: 20px;
+}
+
+.summary_position:hover:after {
+  position: absolute;
+  left: -30px;
+  top: -25px;
+  padding: 5px;
+  background-color: black;
+  border-radius: 5px;
+  color: #fff;
+  content: attr(labelTooltip);
+  white-space: nowrap;
+  z-index: 2;
+  width: 120px;
+}
+
+.summary_time_height {
+  height: 41px;
+}
+
+.other_options {
+  line-height: 20px !important;
+}
+
+.other_options_img {
+  height: 20px;
+  width: 20px;
+  float: right;
+}
+
+.newsvd_dialog {
+  background-color: #fff;
+  padding-top: 20px;
+  padding: 20px 34px;
+  position: relative;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #0000004d;
+  width: 80vw;
+  max-width: 940px;
+}
+
+.newsvd_dialog_close {
+  height: 20px;
+  width: 20px;
+  border-radius: 4em;
+  right: 6px;
+  top: 4px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.newsvd_dialog_close:hover {
+  background-color: #FD935A;
+}
+
+.top_pro_container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.top_pro {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #3d3d3d;
+}
+
+.top_pro_span {
+  font-size: 13px;
+  color: #9a999c;
+}
+
+.discountImg{
+  position: absolute;
+  width: 120px;
+  right: -60px;
+  top: -60px;
+}
+
+.perMon{
+  color: #A19F9F;
+  font-size: 15px;
+  text-align: center;
+  height: 18px;
+  line-height: 18px;
+}
+
+.hotTitle{
+  position: absolute;
+  width: 100%;
+  padding: 5px 0 5px 8px;
+  top: 0;
+  transform: translateY(-100%);
+  z-index: 0;
+  border-radius: 8px 8px 0 0;
+  opacity: 1;
+  background: rgba(179, 107, 244, 0.4);
+  font-size: 13px;
+  font-weight: 600;
+  color: #FD935A;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.cardLogo{
+  position: absolute;
+  top: 8px;
+  left: 9px;
+  font-size: 14px;
+  color: #3D3D3D;
+}
+.cardLogo img{
+  width: 14px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+/* 800px以下媒体查询 */
+@media screen and (max-width: 800px) {
+  .newsvd_dialog {
+      width: 90vw;
+  }
+
+  div#pop {
+      top: 0;
+      padding-top: 0;
+      transform: translateX(-50%) translateY(0);
+      overflow: auto;
+      max-height: calc(100vh - 40px);
+  }
+}</style><div><div id="vimeo_tool" class="" style="display: none;"><div id="pop" class="pop"><div id="newsvd_notice" class="notice"><div id="newsvd_notice_in" class="notice_in"><div class="notice_in_svg"><svg t="1669280615610" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2722" width="16" height="16" class="icon"><path d="M514.048 59.392q93.184 0 174.592 35.328t142.336 96.768 96.256 143.36 35.328 175.104-35.328 175.616-96.256 143.872-142.336 96.768-174.592 35.328-175.104-35.328-142.848-96.768-96.256-143.872-35.328-175.616 35.328-175.104 96.256-143.36 142.848-96.768 175.104-35.328zM795.648 423.936q18.432-18.432 19.456-45.568t-17.408-45.568-45.056-17.92-45.056 18.944l-288.768 288.768-99.328-98.304q-18.432-18.432-45.056-18.944t-45.056 17.92-18.944 43.52 17.92 43.52l142.336 143.36q18.432 18.432 48.128 17.92t48.128-18.944l-4.096 4.096z" p-id="2723" fill="#71b601"></path></svg></div><div id="newsvd_notice_in_span" class="notice_in_span"><span>We will support it soon! Click</span><span id="external_ffmpeg" class="external_ffmpeg">2k/4k</span><span>to download videos first.</span></div></div></div><div id="newsvd_dialog" class="newsvd_dialog"><div class="cardLogo"><span>Vimeo™ Downloader</span></div><div class="top_pro_container"><div class="top_pro">Plan</div><span class="top_pro_span">Subscription will automatically renew every month before you unsubscribe.</span></div><div id="newsvd_dialog_close" class="newsvd_dialog_close"><svg t="1669283546396" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4105" width="20" height="20" class="icon"><path d="M794.8 794.8c-14 14-36.9 14-50.9 0L229.2 280.1c-14-14-14-36.9 0-50.9s36.9-14 50.9 0L794.9 744c13.9 13.9 13.9 36.8-0.1 50.8z" p-id="4106" fill="#2c2c2c"></path><path d="M794.8 229.2c14 14 14 36.9 0 50.9L280.1 794.8c-14 14-36.9 14-50.9 0s-14-36.9 0-50.9L744 229.1c13.9-13.9 36.8-13.9 50.8 0.1z" p-id="4107" fill="#2c2c2c"></path></svg></div><div style="display: flex; justify-content: space-around;"><div id="newsvd_dialog_in" class="dialog_in Monthly"><!----><!----><div id="feature_explain" class="feature_explain"><span id="fee" class="fee"><span>$ 6.99</span><span> / month</span></span><div style="display: flex; justify-content: center;"><span pid="penndbmahnpapepljikkjmakcobdahne-monthly" class="newsvd_pro_sub">Upgrade</span></div><div id="feature_list" class="feature_list"><ul id="feature_list_ul"><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download videos with audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download 1000+ web</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>1-6x download speed</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download subtitles</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Unlimited downloads</span></li></ul></div></div></div><div id="newsvd_dialog_in" class="dialog_in Quarterly"><span class="discount">Save 24%</span><!----><div id="feature_explain" class="feature_explain"><span id="fee" class="fee"><span>$ 15.99</span><span> / quarter</span></span><div style="display: flex; justify-content: center;"><span pid="penndbmahnpapepljikkjmakcobdahne-quarterly" class="newsvd_pro_sub">Upgrade</span></div><div id="feature_list" class="feature_list"><ul id="feature_list_ul"><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download videos with audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download 1000+ web</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>1-6x download speed</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download subtitles</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Unlimited downloads</span></li></ul></div></div></div><div id="newsvd_dialog_in" class="dialog_in Yearly"><span class="discount">Save 52%</span><div class="hotTitle"> 🔥 Flash Sale </div><div id="feature_explain" class="feature_explain"><span id="fee" class="fee"><span>$ 39.99</span><span> / year</span></span><div style="display: flex; justify-content: center;"><span pid="penndbmahnpapepljikkjmakcobdahne-yearly" class="newsvd_pro_sub">Upgrade</span></div><div id="feature_list" class="feature_list"><ul id="feature_list_ul"><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download videos with audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download 1000+ web</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>1-6x download speed</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download subtitles</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Unlimited downloads</span></li></ul></div></div></div></div><p style="text-align: center; font-size: 12px; color: rgb(121, 120, 120); margin: 10px 0px;"> Tip：Please refresh the page after the payment is successful </p></div></div></div></div></template></div><div id="vtPopupMenu"></div></body></html>

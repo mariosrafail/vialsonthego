@@ -1,67 +1,117 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Vials On The Go | Services</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/assets/images/branding/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="assets/css/styles.css" rel="stylesheet"/>
 </head>
-<body>
-  <div id="progress" class="progress"></div>
-  <div class="announcement">Vials On The Go material + Vinebox-inspired premium design system</div>
+<body data-title-el="Φιαλίδια Εν κινήσει | Υπηρεσίες" data-title-en="Vials On The Go | Services">
+  <div class="progress" id="progress"></div>
+  <div class="announcement" data-el="Premium λύσεις γευσιγνωσίας κρασιού" data-en="Premium wine tasting solutions">Premium wine tasting solutions</div>
 
   <header>
     <div class="container nav" id="navWrap">
-            <a class="brand" href="index.html" aria-label="Vials On The Go home">
-        <span class="brand-mark" aria-hidden="true">
+      <a aria-label="Vials On The Go home" class="brand" href="index.html">
+        <span aria-hidden="true" class="brand-mark">
           <span class="brand-cap"></span>
           <span class="brand-neck"></span>
           <span class="brand-body"><span class="brand-fill"></span></span>
         </span>
         <span class="brand-text">VIALS<span>ON THE GO</span></span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-          <a href='index.html'>Home</a>
-          <a href='products.html'>Products</a>
-          <a href='catalog.html'>Catalog</a>
-          <a class="active" href='services.html'>Services</a>
-          <a href='about.html'>About</a>
-          <a href='contact.html'>Contact</a>
+      <nav aria-label="Primary" class="nav-links">
+        <a data-el="Home" data-en="Home" href="index.html">Home</a>
+        <div class="nav-item has-sub" data-group="products">
+          <a data-el="Products" data-en="Products" href="products.html">Products</a>
+          <button aria-expanded="false" aria-label="Toggle product categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών προϊόντων" data-en-aria-label="Toggle product categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Vials" data-en="Vials" href="vials.html">Vials</a>
+            <a data-el="Gift Boxes" data-en="Gift Boxes" href="gift-boxes.html">Gift Boxes</a>
+            <a data-el="Revine" data-en="Revine" href="equipment.html">Revine</a>
+          </div>
+        </div>
+        <a data-el="Catalog" data-en="Catalog" href="catalog.html">Catalog</a>
+        <div class="nav-item has-sub" data-group="services">
+          <a data-el="Services" data-en="Services" href="services.html">Services</a>
+          <button aria-expanded="false" aria-label="Toggle service categories" class="sub-toggle" data-el-aria-label="Εναλλαγή κατηγοριών υπηρεσιών" data-en-aria-label="Toggle service categories" type="button">v</button>
+          <div class="sub-menu">
+            <a data-el="Quality Analysis" data-en="Quality Analysis" href="quality-analysis.html">Quality Analysis</a>
+            <a data-el="Warehouse" data-en="Warehouse" href="warehouse.html">Warehouse</a>
+            <a data-el="Augmented Reality" data-en="Augmented Reality" href="augmented-reality.html">Augmented Reality</a>
+            <a data-el="Consulting" data-en="Consulting" href="consulting.html">Consulting</a>
+            <a data-el="Bottling" data-en="Bottling" href="bottling.html">Bottling</a>
+            <a data-el="Logistics" data-en="Logistics" href="logistics.html">Logistics</a>
+          </div>
+        </div>
+        <a data-el="About" data-en="About" href="about.html">About</a>
+        <a data-el="Contact" data-en="Contact" href="contact.html">Contact</a>
       </nav>
-      <a class="cta" href="catalog.html">Shop Collection</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <a class="cta" data-el="Shop Collection" data-en="Shop Collection" href="catalog.html">Shop Collection</a>
+      <button aria-expanded="false" aria-label="Toggle menu" class="menu-btn" id="menuBtn"><span></span></button>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div data-reveal>
-          <span class="kicker">Vials On The Go</span>
-          <h1>Services <span>from analysis to logistics</span></h1>
-          <p>Explore the full service stack that supports your product quality, customer experience and distribution performance.</p>
+        <div data-reveal="">
+          <span class="kicker" data-el="Vials On The Go" data-en="Vials On The Go">Vials On The Go</span>
+          <h1 data-el-html="Services&lt;span&gt;από την ανάλυση στην εφοδιαστική&lt;/span&gt;" data-en-html="Services &lt;span&gt;from analysis to logistics&lt;/span&gt;">Services <span>from analysis to logistics</span></h1>
+          <p data-el="Εξερευνήστε την πλήρη στοίβα υπηρεσιών που υποστηρίζει την ποιότητα των προϊόντων σας, την εμπειρία πελατών και την απόδοση διανομής." data-en="Explore the full service stack that supports your product quality, customer experience and distribution performance.">Explore the full service stack that supports your product quality, customer experience and distribution performance.</p>
           <div class="actions">
-            <a class="btn primary" href="catalog.html">Explore Catalog</a>
-            <a class="btn ghost" href="services.html">B2B Services</a>
+            <a class="btn primary" data-el="Εξερευνήστε τον Κατάλογο" data-en="Explore Catalog" href="catalog.html">Explore Catalog</a>
+            <a class="btn ghost" data-el="Ξεκινήστε ένα Έργο" data-en="Start a Project" href="contact.html">Start a Project</a>
           </div>
         </div>
-        <figure class="hero-media" data-reveal>
-          <img src="assets/images/local/image00028.jpeg" alt="Vials On The Go visual">
-          <figcaption class="badge">Original content from vialsonthego.com, redesigned with a Vinebox-style visual system.</figcaption>
+        <figure class="hero-media" data-reveal="">
+          <img alt="Vials On The Go visual" src="assets/images/local/image00028.jpeg"/>
+          <figcaption class="badge" data-el="Ένας μοναδικός συνεργάτης για ποιοτική ανάλυση, αποθήκευση, AR, συμβουλευτική, εμφιάλωση και παράδοση." data-en="A single partner for quality analysis, storage, AR, consulting, bottling and delivery.">A single partner for quality analysis, storage, AR, consulting, bottling and delivery.</figcaption>
         </figure>
       </div>
     </section>
 
     <section>
-      <div class="container services" data-reveal>
-        <div class="section-head"><h2 style="color:#fff;">Services</h2><p style="color:rgba(255,255,255,.85);">High-quality solutions and dedicated team support across analysis, storage, AR, consulting, bottling and logistics.</p></div>
+      <div class="container services" data-reveal="">
+        <div class="section-head">
+          <h2 data-el="Services" data-en="Services" style="color:#fff;">Services</h2>
+          <p data-el="Η αρχική σελίδα υπηρεσιών απαριθμούσε έξι συγκεκριμένες δυνατότητες. Διατηρούνται εδώ με πληρέστερες περιγραφές και άμεσους συνδέσμους." data-en="The original services page listed six concrete capabilities. They are kept here with fuller descriptions and direct links." style="color:rgba(255,255,255,.85);">The original services page listed six concrete capabilities. They are kept here with fuller descriptions and direct links.</p>
+        </div>
         <div class="grid-3">
-          <article class="service-item"><h4><a href="quality-analysis.html">Quality Analysis</a></h4><p>Accurate, reliable chemical and pH analysis with modern lab technology.</p></article>
-          <article class="service-item"><h4><a href="warehouse.html">Warehouse</a></h4><p>Safe, accessible and certified storage for your wine inventory.</p></article>
-          <article class="service-item"><h4><a href="augmented-reality.html">Augmented Reality</a></h4><p>In-house AR experiences that tell the story from vineyard to bottle.</p></article>
-          <article class="service-item"><h4><a href="consulting.html">Consulting</a></h4><p>Marketing and oenology consulting to accelerate business growth.</p></article>
-          <article class="service-item"><h4><a href="bottling.html">Bottling</a></h4><p>Specialized 50 ml and 100 ml bottling with high quality controls.</p></article>
-          <article class="service-item"><h4><a href="logistics.html">Logistics</a></h4><p>Partnership-driven delivery workflows for timely and safe shipments.</p></article>
+          <article class="service-item"><h4><a data-el="Quality Analysis" data-en="Quality Analysis" href="quality-analysis.html">Quality Analysis</a></h4><p data-el="Αξιόπιστη χημική ανάλυση, έλεγχος pH και έλεγχοι σταδίου παραγωγής που υποστηρίζουν κρίσιμες για τις επιχειρήσεις αποφάσεις ποιότητας." data-en="Reliable chemical analysis, pH control and production-stage checks that support business-critical quality decisions.">Reliable chemical analysis, pH control and production-stage checks that support business-critical quality decisions.</p></article>
+          <article class="service-item"><h4><a data-el="Warehouse" data-en="Warehouse" href="warehouse.html">Warehouse</a></h4><p data-el="Ασφαλής, προσβάσιμη και ευθυγραμμισμένη με το IFS αποθήκευση για προϊόντα που χρειάζονται ιχνηλασιμότητα, εμπιστοσύνη και λειτουργική πειθαρχία." data-en="Safe, accessible and IFS-aligned storage for products that need traceability, confidence and operational discipline.">Safe, accessible and IFS-aligned storage for products that need traceability, confidence and operational discipline.</p></article>
+          <article class="service-item"><h4><a data-el="Augmented Reality" data-en="Augmented Reality" href="augmented-reality.html">Augmented Reality</a></h4><p data-el="Μια εσωτερική εμπειρία AR που αφηγείται την ιστορία από αμπέλι σε μπουκάλι απευθείας στο τηλέφωνο ή το tablet του χρήστη." data-en="An in-house AR experience that tells the story from vineyard to bottle directly on the user's phone or tablet.">An in-house AR experience that tells the story from vineyard to bottle directly on the user's phone or tablet.</p></article>
+          <article class="service-item"><h4><a data-el="Consulting" data-en="Consulting" href="consulting.html">Consulting</a></h4><p data-el="Συμβουλευτικές υπηρεσίες μάρκετινγκ και οινολογίας που βοηθούν τα οινοποιεία να βελτιώσουν τη θέση τους, την ποιότητα των προϊόντων και την εμπορική δυναμική." data-en="Marketing and oenology consulting that helps wineries sharpen positioning, product quality and commercial momentum.">Marketing and oenology consulting that helps wineries sharpen positioning, product quality and commercial momentum.</p></article>
+          <article class="service-item"><h4><a data-el="Bottling" data-en="Bottling" href="bottling.html">Bottling</a></h4><p data-el="Εξειδικευμένη εμφιάλωση 50 ml και 100 ml με προστασία αδρανούς περιβάλλοντος και υψηλό έλεγχο της τελικής αισθητηριακής ποιότητας." data-en="Specialized 50 ml and 100 ml bottling with inert-environment protection and high control over final sensory quality.">Specialized 50 ml and 100 ml bottling with inert-environment protection and high control over final sensory quality.</p></article>
+          <article class="service-item"><h4><a data-el="Logistics" data-en="Logistics" href="logistics.html">Logistics</a></h4><p data-el="Ροές εργασιών αποστολής με γνώμονα τη συνεργασία για ασφαλή παράδοση παγκοσμίως δια θαλάσσης ή αεροπορικώς, με ιχνηλασιμότητα σε κάθε στάδιο." data-en="Partnership-driven shipping workflows for safe worldwide delivery by sea or air, with traceability at every stage.">Partnership-driven shipping workflows for safe worldwide delivery by sea or air, with traceability at every stage.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container panel" data-reveal="">
+        <div class="section-head">
+          <h2 data-el="Γιατί η στοίβα υπηρεσιών έχει σημασία" data-en="Why the service stack matters">Why the service stack matters</h2>
+          <p data-el="Η τιμή δεν είναι μόνο το φιαλίδιο. Η παλιά τοποθεσία κατέστησε σαφές ότι η ποιότητα εκτέλεσης εξαρτάται από τη ροή εργασίας γύρω από αυτήν." data-en="The value is not only the vial. The old site made it clear that execution quality depends on the workflow around it.">The value is not only the vial. The old site made it clear that execution quality depends on the workflow around it.</p>
+        </div>
+        <div class="grid-2">
+          <article class="info-block">
+            <h3 data-el="Κατασκευασμένο για αξιοπιστία" data-en="Built for reliability">Built for reliability</h3>
+            <ul class="feature-list">
+              <li data-el="Η ανάλυση υποστηρίζει αποφάσεις πριν, κατά τη διάρκεια και μετά την εμφιάλωση." data-en="Analysis supports decisions before, during and after bottling.">Analysis supports decisions before, during and after bottling.</li>
+              <li data-el="Η αποθήκευση και ο χειρισμός διατηρούν την ποιότητα και μειώνουν τον κίνδυνο." data-en="Storage and handling preserve quality and reduce risk.">Storage and handling preserve quality and reduce risk.</li>
+              <li data-el="Η Logistics κλείνει τον βρόχο με ασφαλέστερη διανομή." data-en="Logistics closes the loop with safer distribution.">Logistics closes the loop with safer distribution.</li>
+            </ul>
+          </article>
+          <article class="info-block">
+            <h3 data-el="Κατασκευασμένο για εμπειρία" data-en="Built for experience">Built for experience</h3>
+            <ul class="feature-list">
+              <li data-el="Η αφήγηση AR προσθέτει βάθος σε κάθε γευστική στιγμή." data-en="AR storytelling adds depth to each tasting moment.">AR storytelling adds depth to each tasting moment.</li>
+              <li data-el="Η παροχή συμβουλών ευθυγραμμίζει το προϊόν με τη θέση στην αγορά." data-en="Consulting aligns the product with market positioning.">Consulting aligns the product with market positioning.</li>
+              <li data-el="Η τελική μορφή είναι εξαιρετική από την πρώτη εντύπωση μέχρι την παράδοση." data-en="The final format feels premium from first impression to delivery.">The final format feels premium from first impression to delivery.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -70,19 +120,15 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <h3>Need a custom tasting setup for your winery or brand?</h3>
-        <p>Contact <strong>info@vialsonthego.com</strong> to build your custom vials, gift boxes and logistics workflow.</p>
       </div>
-      <a class="cta" href="contact.html">Contact Team</a>
     </div>
-    <div class="container copyright">© 2026 Vials On The Go • Newsite package prepared for deployment</div>
+    <div class="container copyright" data-el="© 2026 Vials On The Go" data-en="© 2026 Vials On The Go">© 2026 Vials On The Go</div>
   </footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/cart.js"></script>
-</body>
-</html>
 
 
 
 
+</body></html>
