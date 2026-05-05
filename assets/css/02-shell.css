@@ -261,6 +261,31 @@ header {
 
 .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.28); }
 
+.nav-arvr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.08);
+  color: #e4d3a0;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(206, 176, 106, 0.38);
+  transition: transform .22s ease, box-shadow .22s ease, background .22s ease, color .22s ease;
+}
+
+.nav-arvr:hover,
+.nav-arvr:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.28);
+  background: linear-gradient(90deg, #d3b25f, #ecd68d);
+  color: #111;
+}
+
 .lang-switch {
   display: inline-flex;
   align-items: center;

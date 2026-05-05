@@ -376,9 +376,23 @@
     var cta = nav.querySelector(':scope > .cta');
     var menuBtn = nav.querySelector(':scope > .menu-btn');
     if (cta) actions.appendChild(cta);
+    var arvrLink = nav.querySelector(':scope > .nav-arvr');
+    if (arvrLink) actions.appendChild(arvrLink);
     if (menuBtn) actions.appendChild(menuBtn);
     nav.appendChild(actions);
     return actions;
+  }
+
+  function scrollToArVrHash() {
+    if (window.location.hash !== '#ar-vr') return;
+
+    var target = document.getElementById('ar-vr');
+    if (!target) return;
+
+    target.classList.add('show');
+    setTimeout(function () {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 120);
   }
 
   function mountLanguageSwitcher() {
@@ -627,6 +641,7 @@
     function shouldAnimateLink(anchor) {
       if (!anchor) return false;
       if (anchor.hasAttribute('download')) return false;
+      if (anchor.hasAttribute('data-no-transition')) return false;
       if (anchor.getAttribute('target') && anchor.getAttribute('target') !== '_self') return false;
       var href = anchor.getAttribute('href');
       if (!href) return false;
@@ -687,9 +702,12 @@
 
   mountLanguageSwitcher();
   applyTranslations();
+  scrollToArVrHash();
   mountIntroSplash();
   mountAgeGate();
   mountLinkTransitions();
+
+  window.addEventListener('hashchange', scrollToArVrHash);
 
   var nav = document.getElementById('navWrap');
   var menuBtn = document.getElementById('menuBtn');

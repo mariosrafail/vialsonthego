@@ -101,6 +101,27 @@ body.about-page .card:hover img {
 .card-body,
 .product-body,
 .mini-body { padding: 18px; }
+
+.arvr-card .mini-body {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.arvr-card .pill {
+  margin-bottom: 0;
+}
+
+.arvr-card .btn {
+  margin-top: auto;
+}
+
+.mini-card p.mini-note {
+  font-size: .84rem;
+}
+
 .pill {
   display: inline-flex;
   padding: 6px 11px;
